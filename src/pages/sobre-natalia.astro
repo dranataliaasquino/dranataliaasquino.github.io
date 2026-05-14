@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+---
+
+<BaseLayout
+  title="Sobre Natalia"
+  description="Conocé a la Dra. Natalia Asquino, periodoncista con consulta en Montevideo y Punta del Este."
+>
+  <Section padding="lg" width="default">
+    <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">Sobre Natalia</p>
+    <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-6">
+      Periodoncia con foco en el cuidado a largo plazo
+    </h1>
+
+    <div class="grid lg:grid-cols-4 gap-10 items-start">
+      <div class="lg:col-span-1">
+        <img
+          src="/images/natalia-asquino.jpg"
+          alt="Dra. Natalia Asquino, periodoncista"
+          class="aspect-[3/4] object-cover w-full rounded-lg border border-sage-100"
+          loading="eager"
+        />
+      </div>
+
+      <div class="prose-body lg:col-span-3">
+        <p>
+          Soy doctora en odontología y especialista en periodoncia, con más de 10 años de práctica clínica y experiencia en casos de alta complejidad.
+        </p>
+        <p>
+          Mi práctica clínica se concentra en el diagnóstico, tratamiento y mantenimiento de las
+          enfermedades periodontales y periimplantarias. Realizo también colocación y rehabilitación
+          de implantes cuando el plan de tratamiento lo requiere, siempre integrada al manejo
+          periodontal integral del paciente.
+        </p>
+        <p>
+          Atiendo en dos sedes: Montevideo, donde está mi consultorio principal, y Punta del Este,
+          donde acudo de forma regular. Trabajo con un equipo de profesionales que comparten un
+          mismo enfoque: atención cuidadosa, basada en evidencia y orientada a la salud bucal a
+          largo plazo del paciente.
+        </p>
+        <p>
+          En el ámbito académico, soy profesora adjunta (Grado 3) de la Cátedra de Periodoncia de la
+          Facultad de Odontología, UdelaR, con desempeño en grado y posgrado. He publicado
+          trabajos en revistas académicas arbitradas y especializadas, y presentado en
+          congresos nacionales e internacionales de periodoncia. La combinación entre práctica
+          clínica, docencia e investigación me permite mantener actualizados los protocolos
+          que aplico en consulta.
+        </p>
+      </div>
+    </div>
+
+    <div class="prose-body mt-12">
+      <h2>Formación</h2>
+      <ul>
+        <li>Doctora en Odontología — Facultad de Odontología, UdelaR</li>
+        <li>Especialista en Periodoncia — Facultad de Odontología, UdelaR</li>
+        <li>Maestría en Ciencias Médicas — Facultad de Medicina, UdelaR</li>
+        <li>Profesora Adjunta (Grado 3), Cátedra de Periodoncia, UdelaR — grado y posgrado</li>
+      </ul>
+
+      <h2>Áreas de interés clínico</h2>
+      <ul>
+        <li>Tratamiento de la enfermedad periodontal</li>
+        <li>Cirugía mucogingival y recubrimiento radicular</li>
+        <li>Regeneración tisular</li>
+        <li>Implantología y manejo de complicaciones periimplantarias</li>
+        <li>Mantenimiento periodontal e higiene profesional</li>
+      </ul>
+
+      <p class="mt-10 text-[14px] text-muted">
+        ¿Querés ver el detalle académico? <a href="/cv/">Currículum completo →</a>
+      </p>
+    </div>
+  </Section>
+</BaseLayout>

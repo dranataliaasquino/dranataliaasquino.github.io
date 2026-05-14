@@ -1,0 +1,36 @@
+---
+interface Props {
+  width?: 'narrow' | 'default' | 'wide';
+  padding?: 'sm' | 'md' | 'lg';
+  background?: 'cream' | 'sage' | 'white';
+  id?: string;
+}
+const {
+  width = 'default',
+  padding = 'lg',
+  background = 'cream',
+  id,
+} = Astro.props;
+
+const widthMap = {
+  narrow: 'max-w-3xl',
+  default: 'max-w-6xl',
+  wide: 'max-w-7xl',
+};
+const padMap = {
+  sm: 'py-8',
+  md: 'py-12',
+  lg: 'py-20',
+};
+const bgMap = {
+  cream: '',
+  sage: 'bg-sage-100/40',
+  white: 'bg-white',
+};
+---
+
+<section id={id} class={`${bgMap[background]} ${padMap[padding]}`}>
+  <div class={`mx-auto ${widthMap[width]} px-5 lg:px-8`}>
+    <slot />
+  </div>
+</section>

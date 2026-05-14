@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+export async function getStaticPaths() {
+  const all = await getCollection('articulos', ({ data }) => !data.draft);
+  return all.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('es-UY', { month: 'long', year: 'numeric' });
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <Section padding="lg" width="default">
+    <div class="mb-8">
+      <a href="/articulos/" class="text-[13px] text-sage-600 hover:text-sage-900 underline underline-offset-4">
+        ← Volver a artículos
+      </a>
+    </div>
+
+    <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">
+      {entry.data.audience === 'colegas' ? 'Para colegas' : 'Para pacientes'} · {fmt(entry.data.pubDate)}
+    </p>
+    <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-10 leading-tight">{entry.data.title}</h1>
+
+    <article class="prose-body">
+      <Content />
+    </article>
+  </Section>
+</BaseLayout>

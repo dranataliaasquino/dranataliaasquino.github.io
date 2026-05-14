@@ -1,0 +1,150 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import LocationCard from '../components/LocationCard.astro';
+import { SITE, CONTACT, LOCATIONS, whatsappLink } from '../site.config';
+
+const all = await getCollection('articulos', ({ data }) => !data.draft);
+const articulosRecientes = all
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout title={SITE.name} description={SITE.description}>
+  <!-- Hero -->
+  <Section padding="lg" background="cream">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-4">
+          Periodoncia · Implantes · Salud bucal
+        </p>
+        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-serif text-sage-900 leading-[1.1] mb-6">
+          Cuidado periodontal con un enfoque profesional y cercano
+        </h1>
+        <p class="text-lg text-muted leading-relaxed max-w-2xl mb-8 text-justify">
+          Consultorio especializado en periodoncia — la salud de las encías y los tejidos que sostienen los dientes — en Montevideo y Punta del Este. Realizamos diagnóstico, tratamiento y control de enfermedades de las encías, implantes y recesiones gingivales.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href={whatsappLink()}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center px-5 py-3 rounded-md btn-whatsapp text-[14px] font-medium"
+          >
+            Escribir por WhatsApp
+          </a>
+          <a
+            href="/para-colegas/"
+            class="inline-flex items-center px-5 py-3 rounded-md border border-sage-900 text-sage-900 text-[14px] font-medium hover:bg-sage-900 hover:text-cream transition-colors"
+          >
+            Soy odontólogo, quiero derivar
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="aspect-[4/3] max-w-md rounded-lg bg-sage-100 flex items-center justify-center text-sage-600 text-[13px] border border-sage-100 ml-auto">
+          [Foto del equipo · pendiente]
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Value props -->
+  <Section background="sage" padding="md">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="text-[13px] uppercase tracking-wider text-sage-600 font-medium mb-2">Especialización</div>
+        <h3 class="text-xl font-serif text-sage-900 mb-2">Periodoncia clínica e implantología</h3>
+        <p class="text-[14px] text-muted leading-relaxed text-justify">
+          Trayectoria de más de 10 años en periodoncia clínica, con especialización en enfermedad periodontal, cirugía mucogingival, regeneración tisular e implantes. Experiencia en casos de alta complejidad.
+        </p>
+      </div>
+      <div>
+        <div class="text-[13px] uppercase tracking-wider text-sage-600 font-medium mb-2">Equipo</div>
+        <h3 class="text-xl font-serif text-sage-900 mb-2">Atención multidisciplinaria</h3>
+        <p class="text-[14px] text-muted leading-relaxed text-justify">
+          Consultorio con equipo de periodoncia e higienistas dentales, para un seguimiento integral del paciente.
+        </p>
+      </div>
+      <div>
+        <div class="text-[13px] uppercase tracking-wider text-sage-600 font-medium mb-2">Investigación y docencia</div>
+        <h3 class="text-xl font-serif text-sage-900 mb-2">Práctica basada en evidencia</h3>
+        <p class="text-[14px] text-muted leading-relaxed text-justify">
+          Actividad académica activa y actualización continua. La consulta integra los protocolos clínicos más recientes.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Locations -->
+  <Section padding="lg">
+    <div class="mb-10">
+      <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-2">Consultorios</p>
+      <h2 class="text-3xl font-serif text-sage-900">Dos sedes, una misma atención</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      {LOCATIONS.map((loc) => <LocationCard location={loc} />)}
+    </div>
+  </Section>
+
+  <!-- For colleagues callout -->
+  <Section background="sage" padding="md">
+    <div class="grid md:grid-cols-3 gap-8 items-center">
+      <div class="md:col-span-2">
+        <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-2">Para odontólogos</p>
+        <h2 class="text-2xl font-serif text-sage-900 mb-3">¿Necesitás derivar un paciente?</h2>
+        <p class="text-muted text-justify">
+          Recibimos derivaciones de colegas para diagnóstico, tratamiento periodontal y casos de implantología. Encontrá la información necesaria para derivar de forma ágil.
+        </p>
+      </div>
+      <div class="md:text-right">
+        <a
+          href="/para-colegas/"
+          class="inline-flex items-center px-5 py-3 rounded-md bg-sage-900 text-cream text-[14px] font-medium hover:bg-sage-600 transition-colors"
+        >
+          Ver cómo derivar →
+        </a>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Latest articles placeholder -->
+  <Section padding="lg">
+    <div class="flex items-end justify-between mb-8 flex-wrap gap-4">
+      <div>
+        <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-2">Artículos</p>
+        <h2 class="text-3xl font-serif text-sage-900">Lecturas recientes</h2>
+      </div>
+      <a href="/articulos/" class="text-sage-600 hover:text-sage-900 underline underline-offset-4 text-[14px]">
+        Ver todos los artículos →
+      </a>
+    </div>
+    {
+      articulosRecientes.length === 0 ? (
+        <div class="bg-white border border-sage-100 rounded-lg p-8 text-center">
+          <p class="text-muted text-[14px]">
+            Próximamente: notas sobre nueva evidencia, técnicas y consejos de cuidado periodontal.
+          </p>
+        </div>
+      ) : (
+        <ul class="grid md:grid-cols-3 gap-5">
+          {articulosRecientes.map((a) => (
+            <li>
+              <a
+                href={`/articulos/${a.slug}/`}
+                class="block h-full bg-white border border-sage-100 rounded-lg p-6 hover:border-sage-300 transition-colors"
+              >
+                <div class="text-[12px] uppercase tracking-wider text-sage-600 mb-2">
+                  {a.data.audience === 'colegas' ? 'Para colegas' : 'Para pacientes'}
+                </div>
+                <h3 class="text-lg font-serif text-sage-900 mb-2 leading-snug">{a.data.title}</h3>
+                <p class="text-[13px] text-muted leading-relaxed">{a.data.description}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </Section>
+</BaseLayout>

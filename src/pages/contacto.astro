@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import { CONTACT, LOCATIONS, whatsappLink, mailtoLink } from '../site.config';
+---
+
+<BaseLayout
+  title="Contacto"
+  description="Contactá con la Dra. Natalia Asquino por WhatsApp o email."
+>
+  <Section padding="lg" width="default">
+    <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">Contacto</p>
+    <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-6">Cómo llegar a la consulta</h1>
+    <p class="text-muted mb-10 text-justify">
+      Podés escribir por cualquiera de estos canales. Respondemos generalmente dentro del mismo día hábil.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-4 mb-12">
+      <a
+        href={whatsappLink()}
+        target="_blank"
+        rel="noopener"
+        class="block bg-white border border-sage-100 rounded-lg p-6 hover:border-sage-300 transition-colors"
+      >
+        <div class="text-[13px] uppercase tracking-wider text-sage-600 font-medium mb-2">WhatsApp</div>
+        <div class="text-lg font-serif text-sage-900 mb-1">{CONTACT.whatsapp.display}</div>
+        <div class="text-[13px] text-muted">Para consultas, agendar visitas y derivaciones de colegas</div>
+      </a>
+
+      <a
+        href={mailtoLink()}
+        class="block bg-white border border-sage-100 rounded-lg p-6 hover:border-sage-300 transition-colors"
+      >
+        <div class="text-[13px] uppercase tracking-wider text-sage-600 font-medium mb-2">Email</div>
+        <div class="text-lg font-serif text-sage-900 mb-1">{CONTACT.email}</div>
+        <div class="text-[13px] text-muted">Para consultas más extensas, envío de estudios o documentación</div>
+      </a>
+    </div>
+
+    <h2 class="text-2xl font-serif text-sage-900 mb-4">Direcciones</h2>
+    <div class="space-y-4">
+      {
+        LOCATIONS.map((loc) => (
+          <div class="bg-white border border-sage-100 rounded-lg p-5">
+            <div class="font-medium text-sage-900">{loc.name}</div>
+            <div class="text-[14px] text-muted">{loc.address}</div>
+            <div class="text-[14px] text-muted mb-2">{loc.addressLine2}</div>
+            <a
+              href={loc.mapsLink}
+              target="_blank"
+              rel="noopener"
+              class="text-[13px] text-sage-600 hover:text-sage-900 underline underline-offset-4"
+            >
+              Ver en Google Maps →
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+</BaseLayout>

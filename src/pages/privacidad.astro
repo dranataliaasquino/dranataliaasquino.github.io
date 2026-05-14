@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import { CONTACT } from '../site.config';
+const updated = '2025-01-01'; // TODO: update on next revision
+---
+
+<BaseLayout
+  title="Aviso de privacidad"
+  description="Información sobre el tratamiento de datos personales en el sitio de la Dra. Natalia Asquino."
+  noindex={true}
+>
+  <Section padding="lg" width="default">
+    <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">Aviso de privacidad</p>
+    <h1 class="text-3xl font-serif text-sage-900 mb-4">Tratamiento de datos personales</h1>
+    <p class="text-[13px] text-muted mb-10">Última actualización: {updated} · Borrador inicial. Pendiente de revisión.</p>
+
+    <div class="prose-body max-w-prose">
+      <p>
+        Este aviso describe cómo se tratan los datos personales recolectados a través de este sitio web,
+        en cumplimiento con la Ley N.º 18.331 de Protección de Datos Personales y Acción de Habeas Data
+        de la República Oriental del Uruguay.
+      </p>
+
+      <h2>Responsable del tratamiento</h2>
+      <p>
+        Dra. Natalia Asquino — periodoncia. Contacto: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+      </p>
+
+      <h2>Datos que se recolectan</h2>
+      <p>Este sitio puede recolectar los siguientes datos:</p>
+      <ul>
+        <li>Datos que el usuario provee voluntariamente al contactarse por email o WhatsApp.</li>
+        <li>Datos técnicos de navegación (dirección IP, tipo de navegador, páginas visitadas), únicamente con fines estadísticos agregados.</li>
+      </ul>
+      <p>El sitio no utiliza cookies de terceros con fines publicitarios.</p>
+
+      <h2>Finalidad del tratamiento</h2>
+      <ul>
+        <li>Responder a consultas y agendar turnos.</li>
+        <li>Mantener una comunicación profesional con pacientes y colegas.</li>
+        <li>Mejorar el sitio web y los servicios prestados.</li>
+      </ul>
+
+      <h2>Conservación y seguridad</h2>
+      <p>
+        Los datos se conservan únicamente durante el tiempo necesario para cumplir con las finalidades
+        descritas. Se aplican medidas razonables de seguridad técnica y organizativa para protegerlos.
+      </p>
+
+      <h2>Derechos del titular</h2>
+      <p>
+        Podés ejercer en cualquier momento los derechos de acceso, rectificación, actualización,
+        inclusión o supresión de tus datos, escribiendo a <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+      </p>
+
+      <h2>Casos clínicos e imágenes</h2>
+      <p>
+        Las imágenes clínicas (antes y después) que se publican en este sitio son de pacientes que han
+        otorgado su consentimiento informado por escrito específicamente para uso en este sitio web y
+        materiales de divulgación profesional. Ningún paciente es identificable.
+      </p>
+    </div>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+const all = await getCollection('articulos', ({ data }) => !data.draft);
+const articulos = all.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('es-UY', { month: 'long', year: 'numeric' });
+---
+
+<BaseLayout
+  title="Artículos"
+  description="Notas y artículos sobre periodoncia, evidencia clínica y cuidado bucal."
+>
+  <Section padding="lg" width="default">
+    <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">Artículos</p>
+    <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-6">Lecturas de la consulta</h1>
+    <p class="text-muted mb-12 text-justify">
+      Notas breves sobre nueva evidencia, técnicas y consejos de cuidado periodontal. Para pacientes y para colegas.
+    </p>
+
+    {
+      articulos.length === 0 ? (
+        <div class="bg-white border border-sage-100 rounded-lg p-8 text-center">
+          <p class="text-muted text-[14px]">Próximamente publicaremos los primeros artículos.</p>
+        </div>
+      ) : (
+        <ul class="grid sm:grid-cols-2 gap-5">
+          {articulos.map((a) => (
+            <li>
+              <a
+                href={`/articulos/${a.slug}/`}
+                class="block h-full bg-white border border-sage-100 rounded-lg p-6 hover:border-sage-300 transition-colors"
+              >
+                <div class="text-[12px] uppercase tracking-wider text-sage-600 mb-2">
+                  {a.data.audience === 'colegas' ? 'Para colegas' : 'Para pacientes'} · {fmt(a.data.pubDate)}
+                </div>
+                <h2 class="text-xl font-serif text-sage-900 mb-2 leading-snug">{a.data.title}</h2>
+                <p class="text-[14px] text-muted leading-relaxed">{a.data.description}</p>
+                <span class="inline-block mt-4 text-[13px] text-sage-600 underline underline-offset-4">Leer →</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </Section>
+</BaseLayout>

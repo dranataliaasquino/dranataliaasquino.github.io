@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+---
+
+<BaseLayout
+  title="Servicios"
+  description="Servicios clínicos de la Dra. Natalia Asquino: periodoncia, implantología y más."
+>
+  <Section padding="lg" width="default">
+    <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">Servicios</p>
+    <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-12">Qué tratamos en consulta</h1>
+
+    <div class="grid sm:grid-cols-2 gap-4">
+      {
+        [
+          {
+            name: 'Diagnóstico periodontal',
+            description:
+              'Evaluación clínica y radiográfica del estado de las encías y el hueso que sostiene los dientes. Permite identificar gingivitis, periodontitis y otras alteraciones en estadios tempranos.',
+          },
+          {
+            name: 'Tratamiento de la enfermedad periodontal',
+            description:
+              'Eliminación de placa y cálculo subgingival mediante raspado y alisado radicular. En casos más avanzados se complementa con procedimientos quirúrgicos para detener la progresión de la enfermedad.',
+          },
+          {
+            name: 'Cirugía mucogingival',
+            description:
+              'Procedimientos quirúrgicos para corregir defectos del tejido gingival: aumento de encía queratinizada, manejo de frenillos y restablecimiento de la arquitectura gingival.',
+          },
+          {
+            name: 'Recubrimiento radicular',
+            description:
+              'Cirugía plástica periodontal para cubrir raíces expuestas por recesión gingival. Mejora la estética, reduce la sensibilidad y protege la superficie radicular.',
+          },
+          {
+            name: 'Regeneración tisular',
+            description:
+              'Técnicas que buscan recuperar tejido perdido por la enfermedad periodontal, utilizando injertos y biomateriales que estimulan la reconstrucción del soporte natural del diente.',
+          },
+          {
+            name: 'Implantes dentales',
+            description:
+              'Reposición de dientes perdidos mediante implantes osteointegrados. La planificación se realiza con criterios periodontales para asegurar estabilidad y resultados a largo plazo.',
+          },
+          {
+            name: 'Manejo de complicaciones periimplantarias',
+            description:
+              'Tratamiento de mucositis y periimplantitis, condiciones inflamatorias que afectan los tejidos alrededor de los implantes. Incluye descontaminación, terapia regenerativa cuando corresponde y seguimiento clínico.',
+          },
+          {
+            name: 'Mantenimiento periodontal',
+            description:
+              'Controles periódicos para preservar los resultados del tratamiento y prevenir recaídas. Incluye monitoreo clínico, higiene profesional y refuerzo de los cuidados domiciliarios.',
+          },
+        ].map((s) => (
+          <div class="bg-white border border-sage-100 rounded-lg p-5">
+            <div class="text-[15px] font-medium text-sage-900 mb-1">{s.name}</div>
+            <div class="text-[13px] text-muted leading-relaxed text-justify">{s.description}</div>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+---
+
+<BaseLayout
+  title="Currículum"
+  description="Currículum profesional de la Dra. Natalia Asquino."
+>
+  <Section padding="lg" width="default">
+    <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">Currículum</p>
+    <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-6">Trayectoria profesional</h1>
+
+    <p class="text-muted mb-8 text-justify">
+      Currículum académico y profesional de la Dra. Natalia Asquino, con detalle de formación, cargos docentes, publicaciones y participación en congresos.
+    </p>
+
+    <a
+      href="/files/CV_Asquino_2026_ES.pdf"
+      target="_blank"
+      rel="noopener"
+      class="inline-flex items-center px-4 py-2 rounded-md bg-sage-900 text-cream text-[13px] font-medium hover:bg-sage-600 transition-colors"
+    >
+      Descargar CV (PDF)
+    </a>
+  </Section>
+</BaseLayout>

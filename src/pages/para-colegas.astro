@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import { CONTACT, whatsappLink, mailtoLink } from '../site.config';
+---
+
+<BaseLayout
+  title="Para colegas"
+  description="Información para odontólogos que deseen derivar pacientes a la consulta de la Dra. Natalia Asquino."
+>
+  <Section padding="lg" width="default">
+    <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">Para colegas</p>
+    <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-6">
+      Derivaciones desde la práctica general
+    </h1>
+    <p class="text-lg text-muted leading-relaxed mb-12 text-justify">
+      Recibimos derivaciones de colegas para diagnóstico periodontal, tratamiento, casos de implantología y manejo de complicaciones periimplantarias.
+    </p>
+
+    <div class="grid gap-4 mb-12">
+      <div class="bg-white border border-sage-100 rounded-lg p-6">
+        <h3 class="text-lg font-serif text-sage-900 mb-2">Cuándo derivar</h3>
+        <ul class="text-[14px] text-sage-900 leading-relaxed list-disc pl-5 space-y-1.5">
+          <li>Sospecha o diagnóstico de periodontitis</li>
+          <li>Recesiones gingivales con compromiso estético o funcional</li>
+          <li>Cirugía mucogingival, recubrimiento radicular</li>
+          <li>Planificación o colocación de implantes</li>
+          <li>Mucositis o periimplantitis</li>
+          <li>Mantenimiento periodontal en pacientes de alto riesgo</li>
+          <li>Segunda opinión sobre planes de tratamiento periodontal</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-sage-100 rounded-lg p-6">
+        <h3 class="text-lg font-serif text-sage-900 mb-2">Qué información facilita la consulta</h3>
+        <ul class="text-[14px] text-sage-900 leading-relaxed list-disc pl-5 space-y-1.5">
+          <li>Motivo de la derivación, en una o dos líneas</li>
+          <li>Periodontograma o sondaje reciente, si está disponible</li>
+          <li>Radiografías periapicales o panorámica</li>
+          <li>Tomografía, en casos de planificación de implantes</li>
+          <li>Antecedentes médicos relevantes (medicación, comorbilidades)</li>
+        </ul>
+        <p class="text-[13px] text-muted mt-4 text-justify">
+          Los estudios se pueden enviar por WhatsApp o email antes de la primera consulta para optimizar los tiempos.
+        </p>
+      </div>
+
+      <div class="bg-white border border-sage-100 rounded-lg p-6">
+        <h3 class="text-lg font-serif text-sage-900 mb-2">Cómo derivar</h3>
+        <ol class="text-[14px] text-sage-900 leading-relaxed list-decimal pl-5 space-y-1.5">
+          <li>Compartí con nosotros la información clínica relevante por WhatsApp o email: motivo de la derivación y estudios disponibles.</li>
+          <li>El paciente agenda su cita directamente por WhatsApp.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="bg-sage-100/40 rounded-lg p-6">
+      <h3 class="text-lg font-serif text-sage-900 mb-2">Canal directo para colegas</h3>
+      <p class="text-[14px] text-muted mb-4 text-justify">
+        Para compartir información clínica de un paciente a derivar, o para consultar un caso antes de la referencia.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href={whatsappLink(CONTACT.whatsapp.messageColega)}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center px-4 py-2 rounded-md btn-whatsapp text-[13px] font-medium"
+        >
+          WhatsApp profesional
+        </a>
+        <a
+          href={mailtoLink('Derivación profesional')}
+          class="inline-flex items-center px-4 py-2 rounded-md bg-sage-900 text-cream text-[13px] font-medium hover:bg-sage-600 transition-colors"
+        >
+          Email para derivaciones
+        </a>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

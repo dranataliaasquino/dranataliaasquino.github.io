@@ -1,0 +1,83 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE, LOCATIONS, CONTACT } from '../site.config';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = SITE.name,
+  description = SITE.description,
+  image = '/og-image.png',
+  noindex = false,
+} = Astro.props;
+
+const pageTitle = title === SITE.name ? title : `${title} · ${SITE.shortName}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+// LocalBusiness / Dentist structured data
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': ['Dentist', 'MedicalBusiness'],
+  name: SITE.name,
+  description: SITE.description,
+  url: SITE.url,
+  email: CONTACT.email,
+  medicalSpecialty: 'Periodontics',
+  areaServed: ['Montevideo', 'Punta del Este', 'Maldonado', 'Uruguay'],
+  location: LOCATIONS.map((loc) => ({
+    '@type': 'Place',
+    name: `${SITE.shortName} - ${loc.name}`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: loc.address,
+      addressLocality: loc.name,
+      addressCountry: 'UY',
+    },
+  })),
+};
+---
+
+<!doctype html>
+<html lang="es-UY">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="es_UY" />
+    <meta property="og:image" content={new URL(image, Astro.site).toString()} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-sage-900 text-cream px-3 py-2 rounded">
+      Saltar al contenido
+    </a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

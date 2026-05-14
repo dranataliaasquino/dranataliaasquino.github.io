@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+
+const team = [
+  {
+    name: 'Dra. Natalia Asquino',
+    role: 'Periodoncista — Directora de la consulta',
+    bio: 'Doctora en Odontología y Especialista en Periodoncia (UdelaR), con más de 10 años de práctica clínica en Montevideo y Punta del Este. Profesora Adjunta (Grado 3) de la Cátedra de Periodoncia, con foco clínico en cirugía plástica periodontal e injertos gingivales.',
+    photo: '/images/natalia-asquino.jpg',
+  },
+  {
+    name: 'Dra. Clara González Da Ronch',
+    role: 'Periodoncista',
+    bio: 'Odontóloga y Especialista en Periodoncia de la Universidad Católica de Uruguay.',
+    photo: null,
+  },
+  {
+    name: 'Virginia González',
+    role: 'Higienista dental — Montevideo',
+    bio: 'Higienista en Odontología por la Facultad de Odontología de la UdelaR.',
+    photo: null,
+  },
+  {
+    name: 'Verónica Blanco',
+    role: 'Higienista dental — Punta del Este',
+    bio: 'Higienista en Odontología por la Facultad de Odontología de la UdelaR.',
+    photo: null,
+  },
+];
+---
+
+<BaseLayout
+  title="Equipo"
+  description="Equipo de profesionales de la consulta de la Dra. Natalia Asquino."
+>
+  <Section padding="lg" width="default">
+    <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">Equipo</p>
+    <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-12">Quiénes te atienden</h1>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      {
+        team.map((m) => (
+          <div class="bg-white border border-sage-100 rounded-lg p-5 flex gap-5">
+            {m.photo ? (
+              <img
+                src={m.photo}
+                alt={m.name}
+                class="w-32 sm:w-36 aspect-square shrink-0 rounded-md object-cover border border-sage-100"
+                loading="lazy"
+              />
+            ) : (
+              <div class="w-32 sm:w-36 aspect-square shrink-0 rounded-md bg-sage-100 flex items-center justify-center text-sage-600 text-[12px]">
+                [Foto pendiente]
+              </div>
+            )}
+            <div class="flex-1 min-w-0">
+              <div class="font-medium text-sage-900 text-[15px]">{m.name}</div>
+              <div class="text-[13px] text-sage-600 mb-2">{m.role}</div>
+              <p class="text-[13px] text-muted leading-relaxed">{m.bio}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+</BaseLayout>

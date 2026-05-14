@@ -1,0 +1,2 @@
+This folder holds published articulos. Each .md file requires front-matter:
+  title, description, pubDate, audience (pacientes|colegas), draft (true|false)
