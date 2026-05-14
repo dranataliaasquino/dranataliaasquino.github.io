@@ -8,9 +8,7 @@ draft: false
 
 El cepillo de dientes, por más bueno que sea, no entra entre los dientes. Y la mitad de la superficie dental está justamente ahí: en los espacios entre un diente y el siguiente. Por eso, lo que pasa entre los dientes es donde la enfermedad de las encías más empieza.
 
-## Por qué son distintos al hilo dental
-
-El hilo dental es útil, pero tiene limitaciones: pasa entre dientes muy juntos, pero en espacios un poco más amplios — los más comunes en adultos, sobre todo después de los 30 — no remueve la placa eficazmente.
+## Qué son los cepillos interdentales
 
 Los **cepillos interdentales** son pequeños cepillos cilíndricos o cónicos que se introducen entre los dientes y limpian por contacto físico. Vienen en distintos tamaños (medidos en milímetros) para adaptarse a cada espacio.
 
