@@ -1,6 +1,11 @@
 // Single source of truth for site-wide data.
 // Edit values here and they propagate everywhere.
 
+// Master switch for "live" mode.
+// While false: site emits noindex on every page and robots.txt blocks all crawlers.
+// Flip to true ONLY at launch on dranataliaasquino.com.uy.
+export const LIVE = false;
+
 export const SITE = {
   name: 'Dra. Natalia Asquino',
   shortName: 'Dra. Asquino',
@@ -18,7 +23,7 @@ export const CONTACT = {
     message: 'Hola Dra. Asquino, me gustaría agendar una consulta.',
     messageColega: 'Hola Dra. Asquino, soy odontólogo/a y quería compartir información de un paciente que voy a derivar.',
   },
-  email: 'dranataliaasquino@gmail.com',
+  email: 'contacto@dranataliaasquino.com.uy',
 };
 
 export const LOCATIONS = [
