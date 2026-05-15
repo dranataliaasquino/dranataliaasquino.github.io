@@ -12,7 +12,7 @@ export const SITE = {
   tagline: 'Periodoncia · Implantes · Salud bucal integral',
   description:
     'Consulta de periodoncia e implantes en Montevideo y Punta del Este. Diagnóstico, tratamiento y mantenimiento periodontal con enfoque profesional y cercano.',
-  url: 'https://dranataliaasquino.github.io', // update on launch
+  url: 'https://dranataliaasquino.com.uy',
   locale: 'es-UY',
 };
 
