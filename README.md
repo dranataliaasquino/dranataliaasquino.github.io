@@ -64,16 +64,17 @@ Contenido del artículo aquí...
 
 El sitio se despliega automáticamente a GitHub Pages cada vez que se hace `push` a la rama `main`. La configuración está en `.github/workflows/deploy.yml`.
 
-**Setup inicial (una sola vez):**
-1. Crear repositorio en GitHub: `natalia-asquino-web` (público).
-2. En el repositorio: Settings → Pages → Source: GitHub Actions.
-3. Hacer push a `main`. El sitio aparecerá en `https://<usuario>.github.io/natalia-asquino-web/`.
+**Setup actual:**
+- Repositorio: `dranataliaasquino.github.io` (público), bajo la cuenta `dranataliaasquino` (formato de repositorio de sitio personal de GitHub: el repo se llama igual que `<usuario>.github.io`).
+- Settings → Pages → Source: GitHub Actions.
+- URL técnica de GitHub Pages: `https://dranataliaasquino.github.io/`.
+- Dominio personalizado: `dranataliaasquino.com.uy` (configurado en `public/CNAME`).
 
-**Si se compra un dominio:**
-1. Editar `astro.config.mjs`: cambiar `site` al dominio.
-2. Crear archivo `public/CNAME` con el dominio (por ejemplo `dranataliaasquino.uy`).
-3. Configurar DNS del dominio para apuntar a GitHub Pages.
-4. En Settings → Pages, agregar el dominio personalizado.
+**Si se cambia el dominio en el futuro:**
+1. Editar `astro.config.mjs`: cambiar `site` al nuevo dominio.
+2. Editar `public/CNAME` con el nuevo dominio.
+3. Configurar DNS del dominio para apuntar a GitHub Pages (registros A a 185.199.108–111.153).
+4. En Settings → Pages, actualizar el dominio personalizado.
 
 ## Pendientes (TODO)
 
