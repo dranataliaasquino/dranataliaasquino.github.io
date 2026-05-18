@@ -88,10 +88,9 @@ Alineado con la sección 18 del documento maestro `Dental Practice/2026-05-16_Pr
 
 - [ ] Activar modo LIVE (`src/site.config.ts` → `LIVE = true`) cuando Natalia apruebe el contenido y el sitio esté listo para indexarse.
 - [ ] Reemplazar foto principal y avatar (actualmente placeholders).
-- [ ] Confirmar bios y consentimiento del equipo (Clara, Virginia, Verónica) en `equipo.astro`.
-- [ ] Contenido real en `investigacion.astro` (publicaciones, proyectos, docencia).
-- [ ] Confirmar con Natalia el mensaje por defecto de WhatsApp (`CONTACT.whatsapp.message` en `src/site.config.ts`).
-- [ ] Crear `og-image.png` (1200×630) en `public/` para previsualizaciones en redes.
+- [ ] Completar Investigación y docencia: publicaciones, proyectos en curso, docencia (`src/pages/investigacion.astro`).
+- [ ] Revisar los artículos (`src/content/articulos/`).
+- [ ] Agregar casos clínicos (`src/content/casos/`).
 - [ ] Configurar Google Business Profile en Montevideo y Punta del Este.
 - [ ] Decidir e instalar herramienta de analytics (Google Analytics 4 vs Plausible/Umami).
 - [ ] Verificar el sitio en Google Search Console (post-launch).
