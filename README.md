@@ -101,7 +101,7 @@ Alineado con la sección 18 del documento maestro `Dental Practice/2026-05-16_Pr
 - Paleta: Sage & Sand. Tokens en `tailwind.config.mjs`.
 - Tipografía: Inter (sans) + Source Serif 4 (serif para titulares).
 - Componentes en `src/components/`. Layouts en `src/layouts/`.
-- Sin formularios con backend: contacto vía mailto, WhatsApp y AgendaPro.
+- Sin formularios con backend: contacto vía mailto y WhatsApp.
 
 ## Soporte y mantenimiento
 
