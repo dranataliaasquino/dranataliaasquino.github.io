@@ -61,7 +61,7 @@ export const NAV = [
   { href: '/consultorios/', label: 'Consultorios' },
   { href: '/articulos/', label: 'Artículos' },
   { href: '/casos/', label: 'Casos clínicos' },
-  { href: '/investigacion/', label: 'Investigación' },
+  { href: '/investigacion/', label: 'Investigación y docencia' },
   { href: '/para-colegas/', label: 'Para colegas' },
   { href: '/contacto/', label: 'Contacto' },
 ];
