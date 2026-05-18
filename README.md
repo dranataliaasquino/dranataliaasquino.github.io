@@ -69,6 +69,12 @@ El sitio se despliega automáticamente a GitHub Pages cada vez que se hace `push
 - Settings → Pages → Source: GitHub Actions.
 - URL técnica de GitHub Pages: `https://dranataliaasquino.github.io/`.
 - Dominio personalizado: `dranataliaasquino.com.uy` (configurado en `public/CNAME`).
+- DNS gestionados en Antel (`dns.antel.net.uy`): 4 registros A apex apuntando a `185.199.108–111.153`, CNAME `www` → `dranataliaasquino.github.io`. MX y SPF (ImprovMX + Gmail) para el correo institucional.
+- Email institucional: `contacto@dranataliaasquino.com.uy` (forwarding ImprovMX free → Gmail).
+
+**Modo LIVE / pre-launch:**
+- `src/site.config.ts` expone una variable `LIVE` (booleana). Mientras `LIVE === false`, todas las páginas emiten `<meta name="robots" content="noindex, nofollow">` y `public/robots.txt` bloquea a todos los crawlers.
+- Para lanzar al público hay que: poner `LIVE = true` en `site.config.ts`, restaurar `public/robots.txt` permitiendo crawling (`User-agent: *` / `Disallow: /privacidad/` + línea `Sitemap:`), confirmar `SITE.url` apuntando a `https://dranataliaasquino.com.uy`, y commitear todo en un solo commit con mensaje del estilo `Lanzo sitio en dranataliaasquino.com.uy`.
 
 **Si se cambia el dominio en el futuro:**
 1. Editar `astro.config.mjs`: cambiar `site` al nuevo dominio.
@@ -78,13 +84,17 @@ El sitio se despliega automáticamente a GitHub Pages cada vez que se hace `push
 
 ## Pendientes (TODO)
 
-- [ ] Confirmar número de WhatsApp en `src/site.config.ts`.
-- [ ] Reemplazar foto principal y avatar (placeholders en placeholder gris).
-- [ ] Reemplazar logo provisional (monograma "NA" en favicon y header).
-- [ ] Bio de Natalia (sobre-natalia.astro).
-- [ ] Bios y consentimiento del equipo (equipo.astro).
-- [ ] Consentimientos firmados de pacientes para casos clínicos.
-- [ ] Dominio definitivo y configuración de DNS.
+Alineado con la sección 18 del documento maestro `Dental Practice/2026-05-16_Presencia_Online_Consultorio_v04.md`. Si algo cambia, actualizar ambos.
+
+- [ ] Activar modo LIVE (`src/site.config.ts` → `LIVE = true`) cuando Natalia apruebe el contenido y el sitio esté listo para indexarse.
+- [ ] Reemplazar foto principal y avatar (actualmente placeholders).
+- [ ] Confirmar bios y consentimiento del equipo (Clara, Virginia, Verónica) en `equipo.astro`.
+- [ ] Contenido real en `investigacion.astro` (publicaciones, proyectos, docencia).
+- [ ] Confirmar con Natalia el mensaje por defecto de WhatsApp (`CONTACT.whatsapp.message` en `src/site.config.ts`).
+- [ ] Crear `og-image.png` (1200×630) en `public/` para previsualizaciones en redes.
+- [ ] Configurar Google Business Profile en Montevideo y Punta del Este.
+- [ ] Decidir e instalar herramienta de analytics (Google Analytics 4 vs Plausible/Umami).
+- [ ] Verificar el sitio en Google Search Console (post-launch).
 
 ## Convenciones
 
