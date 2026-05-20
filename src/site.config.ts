@@ -33,7 +33,7 @@ export const LOCATIONS = [
     address: '26 de Marzo 3420, apt. 704',
     addressLine2: '11300 Montevideo, Uruguay',
     fullAddress: '26 de Marzo 3420, 11300 Montevideo, Departamento de Montevideo',
-    hours: 'Lunes, jueves y viernes — 8:00 a 18:30',
+    hours: 'Lunes, jueves y viernes — 9:00 a 18:00',
     mapsEmbed:
       'https://www.google.com/maps/embed/v1/place?key=&q=26+de+Marzo+3420,+Montevideo,+Uruguay',
     mapsLink:
@@ -45,7 +45,7 @@ export const LOCATIONS = [
     address: 'Calle 24, entre 21 y 23',
     addressLine2: 'Edificio Linton Village, Punta del Este',
     fullAddress: 'Calle 24, entre 21 y 23, Edificio Linton Village, Punta del Este, Maldonado',
-    hours: 'Lunes — 8:00 a 16:30',
+    hours: 'Lunes — 9:00 a 18:00',
     mapsEmbed:
       'https://www.google.com/maps/embed/v1/place?key=&q=Edificio+Linton+Village,+Calle+24,+Punta+del+Este,+Uruguay',
     mapsLink:
