@@ -45,6 +45,11 @@ import { CONTACT, LOCATIONS, whatsappLink, mailtoLink } from '../site.config';
             <div class="font-medium text-sage-900">{loc.name}</div>
             <div class="text-[14px] text-muted">{loc.address}</div>
             <div class="text-[14px] text-muted mb-2">{loc.addressLine2}</div>
+            {loc.accessNote && (
+              <div class="text-[13px] text-sage-600 italic bg-sand-50 border-l-2 border-sand-300 px-3 py-2 mb-2">
+                {loc.accessNote}
+              </div>
+            )}
             <a
               href={loc.mapsLink}
               target="_blank"
