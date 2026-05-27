@@ -33,7 +33,7 @@ export const LOCATIONS = [
     address: '26 de Marzo 3420, apt. 704',
     addressLine2: '11300 Montevideo, Uruguay',
     fullAddress: '26 de Marzo 3420, 11300 Montevideo, Departamento de Montevideo',
-    accessNote: 'El edificio en esa dirección se llama "Yes!".',
+    accessNote: 'Edificio Yes!',
     hours: 'Lunes, jueves y viernes — 9:00 a 18:00',
     mapsEmbed:
       'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3271.99309870588!2d-56.138856399999995!3d-34.90662270000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f8121eb2ff111%3A0x3743fbbcb12b9442!2sDra.%20Natalia%20Asquino!5e0!3m2!1sen!2suy!4v1779890954816!5m2!1sen!2suy',
@@ -45,7 +45,7 @@ export const LOCATIONS = [
     address: 'Calle 24, entre 21 y 23',
     addressLine2: 'Edificio Linton Village, Punta del Este',
     fullAddress: 'Calle 24, entre 21 y 23, Edificio Linton Village, Punta del Este, Maldonado',
-    accessNote: 'El consultorio funciona dentro del espacio de Clínica Borges. En la puerta dice "Clínica Borges".',
+    accessNote: 'El consultorio funciona dentro del espacio de Clínica Borges.',
     hours: 'Lunes — 9:00 a 18:00',
     mapsEmbed:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.042010454335!2d-54.94426392047878!3d-34.96421681955498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9575054f9df42b5d%3A0xb88f1c6300a2f21!2sDra.%20Natalia%20Asquino!5e0!3m2!1sen!2suy!4v1779891742462!5m2!1sen!2suy',
