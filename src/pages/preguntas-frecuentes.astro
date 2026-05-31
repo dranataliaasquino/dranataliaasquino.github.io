@@ -1,0 +1,329 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import { whatsappLink } from '../site.config';
+
+// -----------------------------------------------------------------------------
+// FAQ — 33 preguntas en 8 categorías (A–H).
+// Cada respuesta es la versión plana para JSON-LD; los enlaces a artículos se
+// renderizan aparte como CTA bajo la respuesta.
+// Toda respuesta clínica debe pasar por validación de Natalia antes de go-live.
+// -----------------------------------------------------------------------------
+
+type FAQItem = {
+  q: string;
+  a: string;
+  articleSlug?: string;
+  articleLabel?: string;
+};
+
+type FAQCategory = {
+  id: string;
+  title: string;
+  items: FAQItem[];
+};
+
+const faqs: FAQCategory[] = [
+  {
+    id: 'encias',
+    title: 'Encías: sangrado, inflamación y movilidad',
+    items: [
+      {
+        q: '¿Por qué me sangran las encías cuando me cepillo?',
+        a: 'La causa más común es la gingivitis: inflamación de la encía por acumulación de placa bacteriana. La encía sana no sangra — si persiste, lo mejor es agendar una consulta.',
+        articleSlug: 'cuando-consultar-periodoncista',
+        articleLabel: 'Indicios para consultar a un periodoncista',
+      },
+      {
+        q: '¿Es normal que me sangren las encías?',
+        a: 'No, aunque sea frecuente. Es un síntoma temprano de inflamación gingival y, si no cede en dos semanas tras mejorar la higiene, conviene agendar una consulta.',
+      },
+      {
+        q: 'Tengo las encías rojas e inflamadas, ¿qué puede ser?',
+        a: 'Muy probablemente gingivitis, causada por placa bacteriana en el margen gingival. Una evaluación clínica permite confirmar si es reversible o si ya hay compromiso del hueso.',
+        articleSlug: 'importancia-tratamiento-temprano',
+        articleLabel: 'La importancia de atender los problemas periodontales a tiempo',
+      },
+      {
+        q: '¿Por qué tengo mal aliento aunque me cepille?',
+        a: 'Las causas bucales más comunes de halitosis son la acumulación de placa bacteriana en o entre los dientes, en la lengua, o la inflamación gingival (por gingivitis o periodontitis). Una higiene bucal rigurosa que incluya elementos de higiene interdental y limpieza de la lengua, mantenerse sin inflamación y una correcta hidratación ayudan al control de la halitosis.',
+        articleSlug: 'higiene-bucal',
+        articleLabel: 'Cómo tener una correcta higiene bucal',
+      },
+      {
+        q: '¿Cuál es la diferencia entre gingivitis y periodontitis?',
+        a: 'La gingivitis es una inflamación reversible de la encía; la periodontitis ya implica pérdida del hueso que sostiene el diente y no es reversible, aunque sí controlable. Toda periodontitis empieza como gingivitis no tratada.',
+        articleSlug: 'periodontitis-riesgos',
+        articleLabel: '¿Qué es la periodontitis y por qué tratarla?',
+      },
+      {
+        q: 'Hay dientes que se me mueven, ¿es normal?',
+        a: 'No. En adultos suele indicar pérdida del hueso de soporte por periodontitis y requiere evaluación pronta — lo mejor es agendar una consulta.',
+        articleSlug: 'periodontitis-riesgos',
+        articleLabel: '¿Qué es la periodontitis y por qué tratarla?',
+      },
+    ],
+  },
+  {
+    id: 'retracciones',
+    title: 'Retracciones gingivales',
+    items: [
+      {
+        q: '¿Por qué se me ven los dientes más largos que antes?',
+        a: 'Probablemente por retracción gingival: la encía se desplazó y dejó expuesta parte de la raíz. Las causas son varias y en muchos casos se pueden corregir con cirugía plástica periodontal.',
+        articleSlug: 'retracciones-gingivales',
+        articleLabel: 'Tengo retracciones de encía, ¿qué debo hacer?',
+      },
+      {
+        q: '¿Es normal tener retracciones de encías después de la ortodoncia?',
+        a: 'No es lo esperable, pero es relativamente frecuente, sobre todo si tenés biotipo gingival fino. Suelen poder corregirse con cirugía plástica periodontal. Si es tu caso, no dudes en consultar.',
+        articleSlug: 'retracciones-gingivales',
+        articleLabel: 'Tengo retracciones de encía, ¿qué debo hacer?',
+      },
+      {
+        q: '¿Las retracciones se pueden corregir?',
+        a: 'En muchos casos sí, mediante injertos de encía que recubren la raíz expuesta. El resultado depende del tipo de retracción y del estado de los tejidos vecinos — lo mejor es agendar una consulta para evaluarlo.',
+        articleSlug: 'retracciones-gingivales',
+        articleLabel: 'Tengo retracciones de encía, ¿qué debo hacer?',
+      },
+      {
+        q: '¿El cepillado fuerte daña las encías?',
+        a: 'Sí. El cepillado con mucha presión o con cerdas duras genera abrasión y retracción gingival.',
+      },
+    ],
+  },
+  {
+    id: 'sensibilidad',
+    title: 'Sensibilidad',
+    items: [
+      {
+        q: '¿Por qué me duelen los dientes cuando como algo frío o caliente?',
+        a: 'La sensibilidad aparece cuando la dentina queda expuesta, por retracciones, desgaste del esmalte o caries. Es un síntoma, no una enfermedad — en la mayoría de los casos tiene solución.',
+        articleSlug: 'sensibilidad-dental',
+        articleLabel: 'Sensibilidad dental: qué puede estar generándola',
+      },
+      {
+        q: '¿La sensibilidad significa que tengo caries?',
+        a: 'No necesariamente. Puede deberse a retracciones, desgaste, bruxismo, fisuras o un blanqueamiento reciente — lo mejor es agendar una consulta para identificar la causa.',
+        articleSlug: 'sensibilidad-dental',
+        articleLabel: 'Sensibilidad dental: qué puede estar generándola',
+      },
+    ],
+  },
+  {
+    id: 'ortodoncia',
+    title: 'Ortodoncia y periodoncia',
+    items: [
+      {
+        q: 'Me quiero poner ortodoncia, ¿qué tengo que tener en cuenta?',
+        a: 'Conviene una evaluación periodontal antes de empezar: las encías y el hueso son el cimiento sobre el que se mueven los dientes. Si hay enfermedad activa o retracciones previas, es importante resolverlas antes.',
+      },
+      {
+        q: '¿Puedo usar brackets o alineadores (por ejemplo, Invisalign) si tengo periodontitis?',
+        a: 'No mientras la enfermedad esté activa: mover dientes con periodontitis no tratada acelera el avance de la enfermedad. Si se logra un buen control, se puede indicar ortodoncia con seguimiento estricto por parte de tu periodoncista y tu ortodoncista.',
+      },
+    ],
+  },
+  {
+    id: 'implantes',
+    title: 'Implantes',
+    items: [
+      {
+        q: 'Si tengo periodontitis, ¿me puedo poner implantes?',
+        a: 'Sí, pero antes hay que tratar y estabilizar la enfermedad. Los implantes pueden verse afectados por la periimplantitis, y tratar la periodontitis previamente es fundamental para prevenirla.',
+        articleSlug: 'periodontitis-riesgos',
+        articleLabel: '¿Qué es la periodontitis y por qué tratarla?',
+      },
+      {
+        q: '¿Los implantes duelen?',
+        a: 'La colocación se hace con anestesia local, así que durante el procedimiento no hay dolor. Después puede haber molestias leves controlables con analgésicos comunes.',
+      },
+      {
+        q: '¿Cuánto dura un implante?',
+        a: 'Bien colocado, con buena higiene y controles periódicos, puede durar décadas. Lo que más afecta su longevidad no es el implante en sí, sino la salud de los tejidos a su alrededor.',
+      },
+      {
+        q: '¿Qué hago si me dijeron que no tengo hueso suficiente?',
+        a: 'La falta de hueso no es un veto: existen técnicas de regeneración que pueden ayudar a recuperar el hueso perdido. Lo mejor es agendar una consulta para evaluar qué corresponde en tu caso.',
+      },
+    ],
+  },
+  {
+    id: 'sistemica',
+    title: 'Salud sistémica y encías',
+    items: [
+      {
+        q: '¿La diabetes afecta a mis encías?',
+        a: 'Sí, en ambos sentidos: la diabetes mal controlada aumenta el riesgo de desarrollar periodontitis, y la inflamación periodontal puede empeorar el control glucémico. Una higiene cuidadosa y controles regulares ayudan a romper ese círculo.',
+        articleSlug: 'periodonto-enfermedades-sistemicas',
+        articleLabel: 'Enfermedad periodontal y otras enfermedades',
+      },
+      {
+        q: '¿El embarazo puede afectar mis encías?',
+        a: 'Sí. Los cambios hormonales aumentan la respuesta inflamatoria de las encías frente a la placa bacteriana. Durante este período es importante mantener una higiene rigurosa y realizar los controles odontológicos que indique tu odontólogo tratante.',
+        articleSlug: 'periodonto-enfermedades-sistemicas',
+        articleLabel: 'Enfermedad periodontal y otras enfermedades',
+      },
+      {
+        q: '¿Hay relación entre las encías y las enfermedades del corazón?',
+        a: 'Sí, la periodontitis se asocia a mayor riesgo cardiovascular.',
+        articleSlug: 'periodonto-enfermedades-sistemicas',
+        articleLabel: 'Enfermedad periodontal y otras enfermedades',
+      },
+    ],
+  },
+  {
+    id: 'cuidado-diario',
+    title: 'Cuidado diario',
+    items: [
+      {
+        q: '¿Cuál es la forma correcta de cepillarse los dientes?',
+        a: 'En términos generales indicamos cepillos de cerdas suaves y cepillado en sentido desde la encía hacia el diente. De todas formas, la técnica más adecuada hay que evaluarla en cada paciente. Como mínimo, dos veces al día y durante dos minutos.',
+        articleSlug: 'higiene-bucal',
+        articleLabel: 'Cómo tener una correcta higiene bucal',
+      },
+      {
+        q: '¿Cómo elegir un cepillo de dientes?',
+        a: 'Cerdas suaves; cabeza y mango que te resulten cómodos. En términos generales se recomienda cambiarlo cada tres meses.',
+        articleSlug: 'higiene-bucal',
+        articleLabel: 'Cómo tener una correcta higiene bucal',
+      },
+      {
+        q: '¿Hilo dental o cepillo interdental?',
+        a: 'El uso de hilo dental o cepillo interdental depende de si hay espacios entre los dientes. Cuando se usa cepillo interdental es importante elegir un tamaño adecuado, que pase ajustado pero sin necesidad de hacer fuerza.',
+        articleSlug: 'cepillos-interdentales',
+        articleLabel: 'La importancia de los cepillos interdentales',
+      },
+      {
+        q: '¿Cada cuánto me tengo que hacer una limpieza?',
+        a: 'Depende del caso: semestral en personas sanas, cada tres o cuatro meses si hay factores de riesgo. La pauta se define después de la evaluación clínica.',
+        articleSlug: 'limpieza-profesional-frecuencia',
+        articleLabel: '¿Cada cuánto debo hacerme una limpieza profesional?',
+      },
+      {
+        q: '¿Fumar afecta la salud de mis encías?',
+        a: 'Mucho: el tabaco es uno de los principales factores de riesgo para la periodontitis y enmascara síntomas como el sangrado. Dejar de fumar mejora significativamente el pronóstico, incluso con enfermedad ya establecida.',
+      },
+    ],
+  },
+  {
+    id: 'consulta',
+    title: 'Sobre la consulta',
+    items: [
+      {
+        q: '¿Qué pasa en la primera consulta?',
+        a: 'Es una evaluación completa: historia clínica, examen periodontal con sondaje, evaluación de la higiene y revisión de radiografías. Te explicamos qué encontramos y, si hace falta tratamiento, lo planificamos desde ahí.',
+      },
+    ],
+  },
+];
+
+// Plain-text JSON-LD schema for Google FAQ rich snippets.
+// One entry per Q&A. Article links are NOT included here — only the answer
+// text — because the schema is for matching, not for navigation.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.flatMap((cat) =>
+    cat.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  ),
+};
+---
+
+<BaseLayout
+  title="Preguntas frecuentes"
+  description="Respuestas a las consultas más frecuentes sobre encías, periodoncia, implantes y salud bucal — por la Dra. Natalia Asquino, periodoncista en Montevideo y Punta del Este."
+>
+  <!-- Intro + Q&A list — ancho default, consistente con el resto del sitio -->
+  <Section padding="lg" width="default">
+    <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">Preguntas frecuentes</p>
+    <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-6">Lo que más nos preguntan</h1>
+    <p class="text-lg text-muted leading-relaxed max-w-3xl mb-8 text-justify">
+      Respuestas breves a las consultas que recibimos con más frecuencia en el consultorio. Esta información es orientativa: no reemplaza una evaluación clínica.
+    </p>
+
+    <!-- Índice (sticky en desktop) -->
+    <nav class="bg-sage-100 rounded-lg p-5 mb-12" aria-label="Índice de preguntas frecuentes">
+      <div class="text-[13px] uppercase tracking-wider text-sage-600 font-medium mb-3">En esta página</div>
+      <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+        {faqs.map((cat) => (
+          <li>
+            <a href={`#${cat.id}`} class="text-[14px] text-sage-900 hover:text-sage-600 underline underline-offset-4">
+              {cat.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Categories -->
+    <div>
+      {faqs.map((cat) => (
+        <section id={cat.id} class="scroll-mt-24 pt-12 first:pt-0">
+          <h2 class="text-2xl lg:text-3xl font-serif text-sage-900 mb-6 pb-3 border-b border-sage-100">
+            {cat.title}
+          </h2>
+          <div class="space-y-3">
+            {cat.items.map((item) => (
+              <details class="group bg-white border border-sage-100 rounded-lg open:border-sage-600 transition-colors">
+                <summary class="cursor-pointer list-none px-5 py-3 flex items-start justify-between gap-4">
+                  <h3 class="font-medium text-sage-900 text-[15px] leading-snug">{item.q}</h3>
+                  <span
+                    class="shrink-0 text-sage-600 text-xl leading-none mt-0.5 group-open:rotate-45 transition-transform"
+                    aria-hidden="true"
+                  >+</span>
+                </summary>
+                <div class="px-5 pb-6 -mt-1">
+                  <p class="text-[14px] text-muted leading-relaxed text-justify">{item.a}</p>
+                  {item.articleSlug && item.articleLabel && (
+                    <p class="mt-4 mb-2 text-[13px]">
+                      <a
+                        href={`/articulos/${item.articleSlug}/`}
+                        class="text-sage-600 hover:text-sage-900 underline underline-offset-4"
+                      >
+                        Leé más: {item.articleLabel} →
+                      </a>
+                    </p>
+                  )}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section background="sage" padding="md">
+    <div class="grid md:grid-cols-3 gap-8 items-center">
+      <div class="md:col-span-2">
+        <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-2">¿Tu pregunta no está acá?</p>
+        <h2 class="text-2xl font-serif text-sage-900 mb-3">Consultanos por WhatsApp</h2>
+        <p class="text-muted text-justify">
+          Si tu consulta es más específica o querés evaluación clínica, podés escribirnos directamente y te respondemos a la brevedad.
+        </p>
+      </div>
+      <div class="md:text-right">
+        <a
+          href={whatsappLink()}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center px-5 py-3 rounded-md btn-whatsapp text-[14px] font-medium"
+        >
+          Escribir por WhatsApp
+        </a>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Google FAQ rich snippet schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</BaseLayout>
