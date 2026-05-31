@@ -53,6 +53,11 @@ export const LOCATIONS = [
   },
 ];
 
+// Nav order: visible nav comes first; entries we want hidden from the nav
+// (but kept as live pages — files preserved) live below the slice cutoff.
+// Header.astro renders NAV.slice(0, 7) in the desktop nav.
+// "Casos clínicos" e "Investigación y docencia" están ocultos por ahora — se
+// reactivan cuando los proyectos correspondientes tengan contenido publicable.
 export const NAV = [
   { href: '/', label: 'Inicio' },
   { href: '/sobre-natalia/', label: 'Sobre Natalia' },
@@ -60,8 +65,7 @@ export const NAV = [
   { href: '/equipo/', label: 'Equipo' },
   { href: '/consultorios/', label: 'Consultorios' },
   { href: '/articulos/', label: 'Artículos' },
-  { href: '/casos/', label: 'Casos clínicos' },
-  { href: '/investigacion/', label: 'Investigación y docencia' },
+  { href: '/preguntas-frecuentes/', label: 'Preguntas frecuentes' },
   { href: '/para-colegas/', label: 'Para colegas' },
   { href: '/contacto/', label: 'Contacto' },
 ];
