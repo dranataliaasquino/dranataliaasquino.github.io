@@ -6,7 +6,7 @@ audience: pacientes
 draft: false
 ---
 
-El cepillo de dientes, por más bueno que sea, no entra entre los dientes. Y la mitad de la superficie dental está justamente ahí: en los espacios entre un diente y el siguiente. Por eso, lo que pasa entre los dientes es donde la enfermedad de las encías más empieza.
+El cepillo de dientes no llega a limpiar las zonas interdentales, donde está casi la mitad de la superficie dental. Por eso el uso de una herramienta de higiene interdental es indispensable para lograr una buena salud bucal.
 
 ## Qué son los cepillos interdentales
 
@@ -16,18 +16,14 @@ Las principales sociedades de periodoncia, como la Federación Europea de Period
 
 ## Cómo usarlos bien
 
-- **Una vez por día**, idealmente antes del cepillado nocturno.
-- Introducir el cepillo con suavidad entre los dientes, sin forzarlo. Si no entra, hace falta un tamaño más chico.
+- Al menos dos veces por día.
+- Introducir el cepillo con suavidad entre los dientes, sin forzarlo. Si no entra, hace falta un tamaño más chico; si pasa holgado, probar con uno más grande.
 - Mover el cepillo hacia adelante y atrás unas pocas veces en cada espacio.
-- Enjuagar el cepillo entre uso y uso, y reemplazarlo cuando las cerdas se deformen (cada una o dos semanas en uso diario).
+- Enjuagar el cepillo entre uso y uso, y reemplazarlo cuando las cerdas se deformen (aprox. una semana).
 
 ## Diferentes tamaños para diferentes espacios
 
 Probablemente no haga falta un mismo tamaño para todos los espacios. Es habitual usar dos o tres tamaños distintos en una misma boca. En la primera consulta podemos indicarte cuáles son los que se adaptan a tu caso.
-
-## El sangrado al principio
-
-Es muy común que las primeras veces sangre un poco. No significa que el cepillo lastime — significa que las encías estaban inflamadas por falta de limpieza en esa zona. Con uso constante, en una o dos semanas el sangrado desaparece y las encías recuperan firmeza.
 
 ---
 

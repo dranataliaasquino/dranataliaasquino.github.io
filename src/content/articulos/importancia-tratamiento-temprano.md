@@ -12,27 +12,25 @@ No es un mensaje de miedo: es una observación que se ve todos los días en cons
 
 ## Por qué la periodoncia es particularmente sensible al tiempo
 
-A diferencia de una caries, que se puede "rellenar" cuando se detecta, la enfermedad periodontal **destruye estructuras de soporte** — encía y hueso — que el cuerpo no recupera espontáneamente. Una vez perdido el hueso, hay procedimientos que pueden recuperar parte, pero no siempre, y nunca del todo.
-
-Es decir: lo que se pierde, en general, se pierde. Lo que se evita perder, se conserva.
+Toda enfermedad bucal es sensible al tiempo, pero la periodoncia lo es de una manera particular: **destruye estructuras de soporte** como el ligamento periodontal y el hueso, que el cuerpo no recupera espontáneamente. Esto puede dejar secuelas estéticas y funcionales que comprometen la permanencia de las piezas dentarias en boca.
 
 ## Cómo cambia el panorama según la etapa
 
 **Gingivitis (inflamación de las encías, sin pérdida de hueso).**
-Es la forma más temprana. Se revierte completamente con limpieza profesional y mejora de la higiene en casa. Sin secuelas, sin pérdidas, sin procedimientos quirúrgicos.
+Es la forma más temprana. Se revierte completamente con limpieza profesional y mejora de la higiene en casa. Sin dejar secuelas.
 
 **Periodontitis inicial.**
-Hay pérdida leve de hueso. El tratamiento son una serie de limpiezas profundas específicas (raspaje y alisado radicular) y controles. La enfermedad se detiene y los tejidos se estabilizan.
+Hay pérdida leve de hueso. El tratamiento son una serie de limpiezas profundas específicas (raspado y alisado radicular, o desbridamiento subgingival) y controles. Se detiene el avance de la enfermedad.
 
 **Periodontitis moderada.**
-La pérdida de hueso es más significativa. El tratamiento de base sigue siendo el mismo, pero a veces se complementa con procedimientos quirúrgicos en zonas específicas. Los resultados son buenos, pero el caso ya es más complejo.
+La pérdida de hueso es más significativa. El tratamiento de base sigue siendo el mismo, pero a veces se complementa con procedimientos quirúrgicos en zonas específicas.
 
 **Periodontitis avanzada.**
-Hay pérdida importante de hueso, movilidad dental, pueden empezar a perderse dientes. El tratamiento es más extenso, más quirúrgico, y a veces incluye rehabilitación con implantes. Los resultados se logran, pero a costa de más tiempo, más procedimientos y más recursos.
+Hay pérdida de hueso, puede haber movilidad dental y migración de las piezas en la boca. El tratamiento es más extenso, puede requerir cirugía periodontal y rehabilitación con implantes.
 
 ## Lo que cambia con la consulta temprana
 
-- **Procedimientos más simples.** Limpiezas en lugar de cirugías.
+- **Procedimientos más simples.**
 - **Mejor pronóstico a largo plazo** de los dientes propios.
 - **Menos pérdida estética y funcional.**
 - **Menos costo total** del tratamiento.
@@ -44,10 +42,6 @@ Hay pérdida importante de hueso, movilidad dental, pueden empezar a perderse di
 Una idea importante: la consulta periodontal no es solo para resolver problemas, también es para detectarlos antes de que se vuelvan problemas. Una evaluación periódica permite captar cambios sutiles — un sondaje un milímetro más profundo, una zona que sangra más que el resto — y actuar antes de que el daño aparezca.
 
 Esta lógica es la misma que la de cualquier otra área de la salud: el control rutinario es prevención.
-
-## Nada de qué avergonzarse
-
-A veces la gente posterga la consulta por vergüenza — porque hace tiempo no va al odontólogo, porque siente que descuidó su boca, porque no quiere que la juzguen. Es importante decirlo claro: **no se juzga a los pacientes**. La consulta es para encontrar soluciones, no para señalar culpas. La gran mayoría de las situaciones tienen un camino concreto de mejora, sin importar el punto de partida.
 
 ---
 

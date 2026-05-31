@@ -22,7 +22,7 @@ Debajo del esmalte (la capa dura y blanca que recubre el diente) está la dentin
 
 **Caries o restauraciones filtradas.** Un punto sensible localizado en un solo diente puede ser señal de caries o de una obturación vieja que dejó de sellar.
 
-**Tratamientos dentales recientes.** Un blanqueamiento o una limpieza profesional pueden producir sensibilidad temporal que cede en pocos días.
+**Tratamientos dentales recientes.** Un blanqueamiento dental puede producir sensibilidad temporal que cede en pocos días.
 
 ## Qué se puede hacer
 
@@ -32,12 +32,8 @@ La conducta depende de la causa, pero el primer paso es siempre identificarla en
 - Usar pastas dentales específicas para dientes sensibles, que reducen la transmisión de estímulos al nervio.
 - Aplicar barnices, geles o materiales de cobertura sobre las zonas expuestas en consulta.
 - Tratar la enfermedad periodontal si hay inflamación de las encías.
-- Recubrir la raíz expuesta con un procedimiento de cirugía mucogingival, en casos de retracciones moderadas a severas.
+- Recubrir la raíz expuesta con un procedimiento de cirugía mucogingival, en casos de retracciones.
 - Usar férula nocturna si hay bruxismo.
-
-## Cuándo consultar
-
-La sensibilidad aislada o muy ocasional no es preocupante. Pero si es persistente, va en aumento, te molesta para comer, o se concentra en un solo diente, conviene consultar. Cuanto antes se identifica la causa, más simple es la solución.
 
 ---
 

@@ -8,31 +8,25 @@ draft: false
 
 La salud de las encías y los dientes empieza en casa, con una rutina sencilla y sostenida. No hace falta complicarse: lo que importa es hacerlo bien todos los días.
 
-## Lo esencial: cepillado dos veces al día
+## Lo esencial: cepillado al menos dos veces al día
 
-El cepillado al despertarse y antes de dormir es la base. La técnica importa más que la fuerza:
+El cepillado al despertarse y antes de dormir es la base. Sin embargo, es recomendable cepillarse luego de cada comida. La técnica importa más que la fuerza:
 
-- **Cepillo de cerdas suaves o medias.** Las cerdas duras pueden lastimar las encías y desgastar el esmalte. No limpian mejor — al contrario.
-- **Movimientos suaves, en ángulo de 45 grados respecto a la encía.** El objetivo es limpiar la zona donde el diente se une a la encía, que es donde se acumula la placa bacteriana.
-- **Pasta dental con flúor.** El flúor protege el esmalte y reduce el riesgo de caries.
-- **Dos minutos, mínimo.** Mucha gente subestima cuánto dura un cepillado correcto.
+- **Cepillo de cerdas suaves.** Las cerdas duras pueden lastimar las encías y desgastar el esmalte. No limpian mejor — al contrario.
+- **Movimientos de la encía al diente, comenzando en un ángulo de 45 grados respecto a la encía.** El objetivo es limpiar la zona donde el diente se une a la encía, que es donde se acumula la placa bacteriana.
+- **Dos minutos como mínimo en cada sesión.**
 
-El cepillo eléctrico no es obligatorio, pero ayuda a quienes tienen dificultad con la técnica manual.
+El cepillo eléctrico es una opción para quienes tienen dificultad con la técnica manual.
 
 ## El cepillado no alcanza: la higiene interdental
 
-Entre diente y diente hay zonas que el cepillo no logra alcanzar. Si no se limpian, la placa se acumula y termina inflamando las encías.
+Entre diente y diente hay zonas que el cepillo no logra alcanzar. Si no se limpian, la placa se acumula y eso genera inflamación gingival.
 
-- **Hilo dental** o **cepillos interdentales**, una vez al día. Los cepillos interdentales suelen ser más prácticos y eficaces para adultos, especialmente cuando los espacios entre dientes son más amplios.
-- Si nunca usaste, las primeras veces puede haber un poco de sangrado. Suele ser señal de que las encías estaban inflamadas; con uso constante, en una o dos semanas el sangrado desaparece.
-
-## Enjuagues: opcionales
-
-Los enjuagues con flúor pueden ser útiles en casos de alto riesgo de caries o sensibilidad. Los enjuagues con clorhexidina son terapéuticos y se usan por períodos cortos, indicados por el odontólogo. **No reemplazan al cepillado ni al hilo.**
+Es recomendable el uso de hilo dental y cepillos interdentales cuando los espacios entre los dientes lo permiten. Sería importante que consultes con tu odontólogo cuál es la herramienta de higiene interdental más apropiada para vos.
 
 ## La consulta periódica
 
-Aunque la higiene en casa sea impecable, hay zonas que solo se limpian bien con instrumental profesional. Una limpieza una o dos veces al año, según cada caso, mantiene el sistema sano y permite detectar problemas en etapas tempranas, cuando son simples de resolver.
+Aunque la higiene en casa sea impecable, hay zonas que solo se limpian bien con instrumental profesional. Se recomienda una limpieza profesional como mínimo dos veces al año, según cada caso. Esto mantiene el sistema sano y permite detectar problemas en etapas tempranas, cuando son simples de resolver.
 
 ---
 

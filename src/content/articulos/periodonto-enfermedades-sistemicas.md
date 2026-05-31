@@ -15,30 +15,29 @@ No se trata de alarmar — se trata de entender que cuidar las encías es parte 
 La conexión mejor establecida es con la diabetes. Es una relación que va en ambas direcciones:
 
 - **La diabetes mal controlada empeora la enfermedad periodontal.** Los pacientes diabéticos tienen un riesgo más alto de desarrollar periodontitis y una respuesta más débil al tratamiento.
-- **La periodontitis dificulta el control de la diabetes.** La inflamación crónica de las encías altera la respuesta del organismo a la insulina, lo que hace más difícil mantener la glucemia en rango.
+- **La periodontitis dificulta el control de la diabetes.** La inflamación crónica de las encías hace más difícil mantener la glucemia en rango.
 
 Tratar la periodontitis en un paciente diabético no solo cuida sus dientes: también puede mejorar los valores de hemoglobina glicosilada. Es uno de los hallazgos más sólidos de la investigación periodontal contemporánea.
 
 ## Salud cardiovascular
 
-Existe una asociación documentada entre la periodontitis y un mayor riesgo cardiovascular (infarto, accidente cerebrovascular). La hipótesis es que la inflamación crónica de las encías contribuye a la inflamación sistémica, que es uno de los mecanismos que predisponen a la enfermedad arterial.
+Existe una asociación documentada entre la periodontitis y un mayor riesgo de eventos cardiovasculares. La hipótesis es que la inflamación crónica de las encías contribuye a la inflamación sistémica, que es uno de los mecanismos que predisponen a este tipo de enfermedades.
 
 Es importante el matiz: la periodontitis no **causa** directamente el infarto. Pero es parte del mismo terreno inflamatorio, y atenderla forma parte del cuidado cardiovascular integral, junto con la dieta, el ejercicio y el control de otros factores de riesgo.
 
 ## Embarazo
 
-La periodontitis severa se ha asociado con un mayor riesgo de **parto prematuro** y **bajo peso al nacer**. La recomendación de las sociedades de obstetricia y periodoncia es realizar una evaluación de las encías durante el embarazo y tratar cualquier inflamación de forma segura, incluso en los primeros trimestres.
+Durante el embarazo los cambios hormonales aumentan la respuesta inflamatoria de las encías, lo que hace este período especialmente sensible.
 
-Además, durante el embarazo los cambios hormonales aumentan la susceptibilidad a la inflamación gingival, lo que hace este período especialmente sensible.
+La periodontitis severa se ha asociado con un mayor riesgo de **parto prematuro** y **bajo peso al nacer**. Es recomendable realizar una evaluación de las encías durante el embarazo y tratar cualquier inflamación de forma segura, en el momento más oportuno.
 
 ## Otras asociaciones en investigación activa
 
-La evidencia es más reciente y aún se está consolidando, pero hay líneas de investigación que vinculan la enfermedad periodontal con:
+Existen líneas de investigación que vinculan la enfermedad periodontal con:
 
 - **Artritis reumatoide**
 - **Enfermedad de Alzheimer**
-- **Algunos tipos de cáncer**
-- **Complicaciones respiratorias** en personas mayores
+- **Enfermedades respiratorias**
 
 En estos casos no hablamos de causalidad demostrada, sino de asociaciones biológicas plausibles que justifican seguir investigando.
 
@@ -47,8 +46,7 @@ En estos casos no hablamos de causalidad demostrada, sino de asociaciones bioló
 No hay que entrar en pánico. La conclusión práctica es razonable y simple:
 
 - Las encías sanas son parte de la salud general.
-- Si tenés una enfermedad crónica — diabetes, hipertensión, enfermedad cardiovascular, embarazo — la salud bucal merece atención especial.
-- El tratamiento periodontal es seguro en prácticamente todos estos contextos, y suele aportar más beneficios que riesgos.
+- Si tenés una enfermedad crónica — diabetes, hipertensión, enfermedad cardiovascular — o estás cursando un embarazo, la salud bucal merece atención especial.
 
 ---
 

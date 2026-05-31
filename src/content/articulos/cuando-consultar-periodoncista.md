@@ -34,12 +34,6 @@ Estas son las señales más comunes que justifican una consulta. Si reconocés u
 
 Si tu odontólogo general te recomienda una consulta con periodoncista — por sospecha de periodontitis, planificación de implantes, recesiones gingivales, problemas estéticos de la encía o por una segunda opinión — es buena idea hacerlo. La derivación no implica que haya algo grave; significa que el caso se beneficia de una mirada especializada.
 
-## Qué esperar de la primera consulta
-
-La primera visita es de **diagnóstico**, no de tratamiento. Incluye una historia clínica completa, una evaluación cuidadosa de las encías y el hueso (sondaje, radiografías), y una conversación sobre lo que se encuentra. Salís de la consulta con un panorama claro: qué tenés, qué se puede hacer, en qué orden y por qué.
-
-No hay nada de qué avergonzarse, no hay juicios, y casi siempre hay un buen plan a seguir.
-
 ---
 
 **Coordinar una consulta es un paso simple. Cuanto antes, mejor — los problemas periodontales solo empeoran si no se atienden.**

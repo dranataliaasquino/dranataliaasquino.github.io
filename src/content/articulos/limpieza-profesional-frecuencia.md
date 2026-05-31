@@ -8,19 +8,18 @@ draft: false
 
 La pregunta es común y la respuesta corta es: **depende de cada caso**. No existe una frecuencia única que sirva para todos. Lo que sí existe es una lógica clara para definirla.
 
-## La regla general: cada seis a doce meses
+## La regla general: cada tres a seis meses
 
-Para personas con encías sanas, sin antecedentes de enfermedad periodontal, sin factores de riesgo importantes, una limpieza cada **seis a doce meses** suele alcanzar. Es lo que recomiendan las principales sociedades odontológicas internacionales.
+Para personas con encías sanas, sin antecedentes de enfermedad periodontal o factores de riesgo, una limpieza profesional cada **seis meses** es lo recomendable.
 
-Pero "encías sanas y sin riesgo" no es la situación de todo el mundo. Hay personas que necesitan limpiezas más frecuentes — cada tres o cuatro meses — y otras que con una vez al año mantienen su sistema en orden.
+Hay personas que necesitan limpiezas más frecuentes — cada tres o cuatro meses.
 
 ## Lo que sube la frecuencia
 
 Conviene aumentarla a **cada tres o cuatro meses** si:
 
 - Hubo periodontitis previa tratada (es lo que llamamos "mantenimiento periodontal").
-- Hay encías que se inflaman con facilidad.
-- Se forma sarro rápidamente, aunque la higiene sea buena.
+- Se forma sarro rápidamente.
 - Hay diabetes, especialmente si está mal controlada.
 - Hay tabaquismo.
 - Se llevan implantes dentales que requieren controles especiales.
@@ -30,7 +29,7 @@ Conviene aumentarla a **cada tres o cuatro meses** si:
 
 Aunque hagas todo bien — cepillado dos veces al día, hilo o cepillos interdentales, técnica correcta — hay zonas que no se limpian eficazmente con la mejor higiene doméstica. La placa se mineraliza y se convierte en sarro, que ya no se elimina cepillando.
 
-La limpieza profesional remueve ese sarro, instrumenta zonas que el cepillo no alcanza y permite detectar problemas que aún no dan síntomas. Es prevención, no estética.
+La limpieza profesional remueve ese sarro, instrumenta zonas que el cepillo no alcanza y permite detectar problemas que aún no dan síntomas.
 
 ## Qué incluye una limpieza profesional bien hecha
 

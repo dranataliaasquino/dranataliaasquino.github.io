@@ -26,17 +26,15 @@ Identificar la causa es clave, porque define el tratamiento.
 
 ## Qué se puede hacer
 
-Las opciones dependen de la severidad y la causa, pero en general el manejo incluye varios niveles:
+Las opciones dependen de la severidad y la causa.
 
-**Etapa 1 — frenar el avance.** Modificar lo que está produciendo el daño: cambiar técnica de cepillado, controlar la inflamación, usar férula si hay bruxismo. Esto es lo primero, siempre.
+El primer paso es controlar las causas que generan las retracciones y frenar el avance. Modificar lo que está produciendo el daño: cambiar la técnica de cepillado, controlar la inflamación, usar férula si hay bruxismo y tratar la enfermedad periodontal si está presente. Esto es lo primero, siempre.
 
-**Etapa 2 — proteger la raíz expuesta.** Si hay sensibilidad o desgaste, se pueden aplicar materiales protectores sobre la raíz, o restauraciones específicas en algunos casos.
-
-**Etapa 3 — recubrir la raíz quirúrgicamente.** En retracciones moderadas o severas, especialmente cuando hay compromiso estético o funcional, existen procedimientos de **cirugía plástica periodontal** (recubrimiento radicular) que devuelven encía sobre la zona expuesta. Son técnicas muy refinadas, con resultados predecibles cuando están bien indicadas.
+En algunos casos se puede cubrir la raíz quirúrgicamente mediante el uso de injertos de encía.
 
 ## Es importante no dejarlo pasar
 
-Una retracción pequeña que no progresa puede observarse. Pero si avanza, expone más raíz, genera sensibilidad o estética desfavorable, lo prudente es consultar. Cuanto más temprano se interviene, mejores los resultados — y más simples los procedimientos.
+Una vez instaladas, las recesiones gingivales tienden a seguir avanzando: exponen más raíz, generan sensibilidad y afectan la estética. Lo prudente es consultar. Cuanto más temprano se interviene, mejores los resultados — y más simples los procedimientos.
 
 ---
 

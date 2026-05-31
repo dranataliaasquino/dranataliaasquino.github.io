@@ -35,12 +35,8 @@ Algunos factores aumentan el riesgo:
 
 - **Tabaquismo**: el factor de riesgo modificable más importante.
 - **Diabetes**, especialmente mal controlada.
-- **Antecedentes familiares** de pérdida temprana de dientes.
-- **Estrés crónico**.
-- **Edad**: la prevalencia aumenta a partir de los 40 años.
-- **Algunos medicamentos** que afectan las encías.
-
-Tener uno o varios de estos factores no significa que vayas a desarrollar periodontitis; significa que conviene controlarse con un poco más de atención.
+- **Antecedentes familiares** de pérdida temprana de dientes por esta causa.
+- **Estrés**.
 
 ## Lo central: es tratable
 
@@ -50,7 +46,7 @@ Lo que no se puede hacer es esperar. La periodontitis no se cura sola, y el hues
 
 ## Después del tratamiento: el mantenimiento
 
-Una persona que tuvo periodontitis siempre tendrá más riesgo de recaída. Por eso, después del tratamiento activo, se ingresa a un programa de **mantenimiento periodontal** — controles cada tres o cuatro meses, que mantienen la enfermedad estable a largo plazo. Es lo que hace la diferencia entre conservar los dientes muchos años o perderlos.
+La periodontitis es considerada una enfermedad crónica: la persona que la tuvo siempre tendrá más riesgo de recidiva. Por eso, después del tratamiento activo, se ingresa a un programa de **mantenimiento periodontal** — controles cada tres o cuatro meses, que mantienen la enfermedad estable. Este mantenimiento es clave para preservar los resultados logrados a largo plazo.
 
 ---
 
