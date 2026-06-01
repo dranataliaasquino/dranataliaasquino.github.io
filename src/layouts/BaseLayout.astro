@@ -21,7 +21,9 @@ const {
 const pageTitle = title === SITE.name ? title : `${title} · ${SITE.shortName}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-// LocalBusiness / Dentist structured data
+// LocalBusiness / Dentist structured data.
+// Nota: `sameAs` (IG/FB) se omite a propósito mientras los perfiles
+// estén incompletos. Reactivar cuando IG y FB tengan contenido publicable.
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': ['Dentist', 'MedicalBusiness'],
@@ -29,6 +31,7 @@ const structuredData = {
   description: SITE.description,
   url: SITE.url,
   email: CONTACT.email,
+  telephone: CONTACT.whatsapp.number,
   medicalSpecialty: 'Periodontics',
   areaServed: ['Montevideo', 'Punta del Este', 'Maldonado', 'Uruguay'],
   location: LOCATIONS.map((loc) => ({

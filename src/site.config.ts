@@ -4,7 +4,7 @@
 // Master switch for "live" mode.
 // While false: site emits noindex on every page and robots.txt blocks all crawlers.
 // Flip to true ONLY at launch on dranataliaasquino.com.uy.
-export const LIVE = false;
+export const LIVE = true;
 
 export const SITE = {
   name: 'Dra. Natalia Asquino',
@@ -24,6 +24,17 @@ export const CONTACT = {
     messageColega: 'Hola Dra. Asquino, soy odontólogo/a y quería compartir información de un paciente que voy a derivar.',
   },
   email: 'contacto@dranataliaasquino.com.uy',
+};
+
+// Social profiles. Actualmente NO se renderizan en el sitio.
+// IG y FB estan incompletos; reactivar cuando tengan contenido publicable:
+// (i) reintroducir el bloque de iconos en Footer.astro;
+// (ii) reimportar SOCIAL en BaseLayout.astro y agregar
+//      sameAs: [SOCIAL.instagram, SOCIAL.facebook] al structuredData.
+// La URL de Facebook depende del cambio de handle pendiente.
+export const SOCIAL = {
+  instagram: 'https://www.instagram.com/dranataliaasquino',
+  facebook: 'https://www.facebook.com/dranataliaasquino',
 };
 
 export const LOCATIONS = [
@@ -53,11 +64,6 @@ export const LOCATIONS = [
   },
 ];
 
-// Nav order: visible nav comes first; entries we want hidden from the nav
-// (but kept as live pages — files preserved) live below the slice cutoff.
-// Header.astro renders NAV.slice(0, 7) in the desktop nav.
-// "Casos clínicos" e "Investigación y docencia" están ocultos por ahora — se
-// reactivan cuando los proyectos correspondientes tengan contenido publicable.
 export const NAV = [
   { href: '/', label: 'Inicio' },
   { href: '/sobre-natalia/', label: 'Sobre Natalia' },
@@ -70,7 +76,6 @@ export const NAV = [
   { href: '/contacto/', label: 'Contacto' },
 ];
 
-// Helpers
 export function whatsappLink(message?: string) {
   const num = CONTACT.whatsapp.number.replace(/\D/g, '');
   const msg = encodeURIComponent(message ?? CONTACT.whatsapp.message);

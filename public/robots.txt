@@ -1,7 +1,10 @@
-# Pre-launch: block all crawlers while site is in review.
-# At launch (when LIVE flag flips to true in site.config.ts),
-# replace this file with the production version that allows crawling
-# and re-introduces the Sitemap reference pointing to the .com.uy domain.
+# Production robots: allow all crawlers except the privacy page.
+# If returning to pre-launch mode, replace with:
+#   User-agent: *
+#   Disallow: /
 
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /privacidad/
+
+Sitemap: https://dranataliaasquino.com.uy/sitemap-index.xml
