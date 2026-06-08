@@ -5,30 +5,43 @@ const year = new Date().getFullYear();
 
 <footer class="mt-24 bg-sage-100/40 border-t border-sage-100">
   <div class="mx-auto max-w-6xl px-5 lg:px-8 py-12">
-    <div class="grid gap-10 md:grid-cols-3">
-      <div>
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-[repeat(24,minmax(0,1fr))] lg:gap-8">
+      <div class="lg:col-span-6">
         <div class="font-serif text-xl text-sage-900">{SITE.name}</div>
         <p class="text-[14px] text-muted mt-2 leading-relaxed">{SITE.tagline}</p>
       </div>
 
-      <div>
-        <div class="md:w-fit md:mx-auto">
-          <h4 class="text-[13px] uppercase tracking-wider text-sage-600 font-medium mb-3">Consultorios</h4>
-          <ul class="space-y-3">
-            {
-              LOCATIONS.map((loc) => (
-                <li class="text-[14px] text-sage-900">
-                  <div class="font-medium">{loc.name}</div>
-                  <div class="text-muted">{loc.address}</div>
-                  <div class="text-muted">{loc.addressLine2}</div>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
+      <div class="lg:col-start-8 lg:col-span-4">
+        <h4 class="text-[13px] uppercase tracking-wider text-sage-600 font-medium mb-3">Navegación</h4>
+        <ul class="space-y-2 text-[14px]">
+          {
+            NAV.filter((item) => item.href !== '/' && item.href !== '/contacto/').map((item) => (
+              <li>
+                <a href={item.href} class="text-sage-900 hover:text-sage-600">
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
 
-      <div class="md:text-right">
+      <div class="lg:col-start-13 lg:col-span-6">
+        <h4 class="text-[13px] uppercase tracking-wider text-sage-600 font-medium mb-3">Consultorios</h4>
+        <ul class="space-y-3">
+          {
+            LOCATIONS.map((loc) => (
+              <li class="text-[14px] text-sage-900">
+                <div class="font-medium">{loc.name}</div>
+                <div class="text-muted">{loc.address}</div>
+                <div class="text-muted">{loc.addressLine2}</div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="lg:col-start-20 lg:col-span-6">
         <h4 class="text-[13px] uppercase tracking-wider text-sage-600 font-medium mb-3">Contacto</h4>
         <ul class="space-y-2 text-[14px]">
           <li>
