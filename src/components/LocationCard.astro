@@ -51,6 +51,7 @@ const { location, showMap = false } = Astro.props;
       href={location.mapsLink}
       target="_blank"
       rel="noopener"
+      aria-label={`Ver ${location.name} en Google Maps`}
       class="inline-flex items-center gap-1 text-[13px] text-sage-600 hover:text-sage-900 underline underline-offset-4"
     >
       Ver en Google Maps →

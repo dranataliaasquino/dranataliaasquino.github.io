@@ -20,7 +20,7 @@ export default {
           600: '#8A7A55',
         },
         ink: '#2E3A2C',
-        muted: '#6B6B6B',
+        muted: '#5B5B5B',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
