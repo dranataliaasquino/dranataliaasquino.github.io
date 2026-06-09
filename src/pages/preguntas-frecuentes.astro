@@ -46,13 +46,13 @@ const faqs: FAQCategory[] = [
       },
       {
         q: '¿Por qué tengo mal aliento aunque me cepille?',
-        a: 'Las causas bucales más comunes de halitosis son la acumulación de placa bacteriana en o entre los dientes, en la lengua, o la inflamación gingival (por gingivitis o periodontitis). Una higiene bucal rigurosa que incluya elementos de higiene interdental y limpieza de la lengua, mantenerse sin inflamación y una correcta hidratación ayudan al control de la halitosis.',
+        a: 'Las causas bucales más comunes de halitosis (mal aliento) son la acumulación de placa bacteriana en o entre los dientes, en la lengua, o la inflamación gingival (por gingivitis o periodontitis). Una higiene bucal rigurosa que incluya elementos de higiene interdental y limpieza de la lengua, mantenerse sin inflamación y una correcta hidratación ayudan al control de la halitosis.',
         articleSlug: 'higiene-bucal',
         articleLabel: 'Cómo tener una correcta higiene bucal',
       },
       {
         q: '¿Cuál es la diferencia entre gingivitis y periodontitis?',
-        a: 'La gingivitis es una inflamación reversible de la encía; la periodontitis ya implica pérdida del hueso que sostiene el diente y no es reversible, aunque sí controlable. Toda periodontitis empieza como gingivitis no tratada.',
+        a: 'La gingivitis es una inflamación de la encía, reversible si se trata a tiempo. La periodontitis es una etapa más avanzada: ya hubo pérdida del hueso que sostiene al diente, daño que no se revierte pero sí se controla con tratamiento. Toda periodontitis empezó como una gingivitis que no fue tratada a tiempo.',
         articleSlug: 'periodontitis-riesgos',
         articleLabel: '¿Qué es la periodontitis y por qué tratarla?',
       },
@@ -76,7 +76,7 @@ const faqs: FAQCategory[] = [
       },
       {
         q: '¿Es normal tener retracciones de encías después de la ortodoncia?',
-        a: 'No es lo esperable, pero es relativamente frecuente, sobre todo si tenés biotipo gingival fino. Suelen poder corregirse con cirugía plástica periodontal. Si es tu caso, no dudes en consultar.',
+        a: 'No es lo esperable, pero es relativamente frecuente, sobre todo si tenés biotipo gingival fino (encías delgadas). En general se pueden corregir con cirugía plástica periodontal. Si es tu caso, no dudes en consultar.',
         articleSlug: 'retracciones-gingivales',
         articleLabel: 'Tengo retracciones de encía, ¿qué debo hacer?',
       },
@@ -120,7 +120,7 @@ const faqs: FAQCategory[] = [
       },
       {
         q: '¿Puedo usar brackets o alineadores (por ejemplo, Invisalign) si tengo periodontitis?',
-        a: 'No mientras la enfermedad esté activa: mover dientes con periodontitis no tratada acelera el avance de la enfermedad. Si se logra un buen control, se puede indicar ortodoncia con seguimiento estricto por parte de tu periodoncista y tu ortodoncista.',
+        a: 'No mientras la enfermedad esté activa: el tratamiento de ortodoncia mueve los dientes, y hacerlo sobre una periodontitis no tratada acelera el avance de la enfermedad. Si se logra un buen control, se puede indicar ortodoncia con seguimiento estricto por parte de tu periodoncista y tu ortodoncista.',
       },
     ],
   },
@@ -130,7 +130,7 @@ const faqs: FAQCategory[] = [
     items: [
       {
         q: 'Si tengo periodontitis, ¿me puedo poner implantes?',
-        a: 'Sí, pero antes hay que tratar y estabilizar la enfermedad. Los implantes pueden verse afectados por la periimplantitis, y tratar la periodontitis previamente es fundamental para prevenirla.',
+        a: 'Sí, pero antes hay que tratar y estabilizar la enfermedad. Los implantes pueden verse afectados por la periimplantitis (inflamación con pérdida del hueso que rodea al implante), y tratar la periodontitis previamente es fundamental para prevenirla.',
         articleSlug: 'periodontitis-riesgos',
         articleLabel: '¿Qué es la periodontitis y por qué tratarla?',
       },
@@ -144,7 +144,7 @@ const faqs: FAQCategory[] = [
       },
       {
         q: '¿Qué hago si me dijeron que no tengo hueso suficiente?',
-        a: 'La falta de hueso no es un veto: existen técnicas de regeneración que pueden ayudar a recuperar el hueso perdido. Lo mejor es agendar una consulta para evaluar qué corresponde en tu caso.',
+        a: 'La falta de hueso no es irreversible: existen técnicas de regeneración que pueden ayudar a recuperar el hueso perdido. Lo mejor es agendar una consulta para evaluar qué corresponde en tu caso.',
       },
     ],
   },
@@ -178,7 +178,7 @@ const faqs: FAQCategory[] = [
     items: [
       {
         q: '¿Cuál es la forma correcta de cepillarse los dientes?',
-        a: 'En términos generales indicamos cepillos de cerdas suaves y cepillado en sentido desde la encía hacia el diente. De todas formas, la técnica más adecuada hay que evaluarla en cada paciente. Como mínimo, dos veces al día y durante dos minutos.',
+        a: 'En términos generales indicamos cepillos de cerdas suaves y cepillado en sentido desde la encía hacia el diente. De todas formas, la técnica más adecuada hay que evaluarla en cada paciente. Es necesario cepillarse como mínimo dos veces al día y durante dos minutos.',
         articleSlug: 'higiene-bucal',
         articleLabel: 'Cómo tener una correcta higiene bucal',
       },
@@ -190,7 +190,7 @@ const faqs: FAQCategory[] = [
       },
       {
         q: '¿Hilo dental o cepillo interdental?',
-        a: 'El uso de hilo dental o cepillo interdental depende de si hay espacios entre los dientes. Cuando se usa cepillo interdental es importante elegir un tamaño adecuado, que pase ajustado pero sin necesidad de hacer fuerza.',
+        a: 'Ambos. El hilo y el cepillo interdental cumplen funciones distintas, y su uso dependerá del espacio que existe entre los dientes. Cuando se usa cepillo interdental es importante elegir un tamaño adecuado, que pase ajustado pero sin necesidad de hacer fuerza.',
         articleSlug: 'cepillos-interdentales',
         articleLabel: 'La importancia de los cepillos interdentales',
       },
@@ -303,25 +303,19 @@ const faqSchema = {
 
   <!-- CTA -->
   <Section background="sage" padding="md">
-    <div class="grid md:grid-cols-3 gap-8 items-center">
-      <div class="md:col-span-2">
-        <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-2">¿Tu pregunta no está acá?</p>
-        <h2 class="text-2xl font-serif text-sage-900 mb-3">Consultanos por WhatsApp</h2>
-        <p class="text-muted text-justify">
-          Si tu consulta es más específica o querés evaluación clínica, podés escribirnos directamente y te respondemos a la brevedad.
-        </p>
-      </div>
-      <div class="md:text-right">
-        <a
-          href={whatsappLink()}
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center px-5 py-3 rounded-md btn-whatsapp text-[14px] font-medium"
-        >
-          Escribir por WhatsApp
-        </a>
-      </div>
-    </div>
+    <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-2">¿Tu pregunta no está acá?</p>
+    <h2 class="text-2xl font-serif text-sage-900 mb-3">Consultanos por WhatsApp</h2>
+    <p class="text-muted text-justify mb-6">
+      Si tu consulta es más específica o querés evaluación clínica, podés escribirnos directamente y te respondemos a la brevedad.
+    </p>
+    <a
+      href={whatsappLink()}
+      target="_blank"
+      rel="noopener"
+      class="inline-flex items-center justify-center px-5 py-3 min-w-[260px] rounded-md btn-whatsapp text-[14px] font-medium"
+    >
+      Escribir por WhatsApp
+    </a>
   </Section>
 
   <!-- Google FAQ rich snippet schema -->
