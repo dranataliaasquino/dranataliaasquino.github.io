@@ -48,11 +48,11 @@ h1, h2, h3, h4 {
 .prose-body ul { list-style: disc; padding-left: 1.4em; margin-bottom: 1em; }
 .prose-body ol { list-style: decimal; padding-left: 1.4em; margin-bottom: 1em; }
 
-/* WhatsApp button accent */
+/* WhatsApp button accent — using WhatsApp's dark teal #075E54 instead of the brand-light #25D366 so the white text passes WCAG AA contrast (6.5:1 vs 1.9:1). Still a recognized WhatsApp brand color. */
 .btn-whatsapp {
-  background-color: #25D366;
+  background-color: #075E54;
   color: white;
 }
 .btn-whatsapp:hover {
-  background-color: #1ebe57;
+  background-color: #064F45;
 }
