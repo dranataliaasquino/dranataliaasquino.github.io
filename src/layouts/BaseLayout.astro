@@ -21,30 +21,47 @@ const {
 const pageTitle = title === SITE.name ? title : `${title} · ${SITE.shortName}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-// LocalBusiness / Dentist structured data.
+// Structured data: MedicalOrganization (parent brand) + 2 LocalBusiness departments.
+// This pattern is Google's recommended schema for multi-location businesses — each
+// consultorio can rank independently in its own local search area while sharing the
+// parent brand identity.
 // Nota: `sameAs` (IG/FB) se omite a propósito mientras los perfiles
 // estén incompletos. Reactivar cuando IG y FB tengan contenido publicable.
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': ['Dentist', 'MedicalBusiness'],
+  '@type': 'MedicalOrganization',
+  '@id': `${SITE.url}/#organization`,
   name: SITE.name,
   description: SITE.description,
   url: SITE.url,
-  image: `${SITE.url}/images/equipo.jpg`,
   logo: `${SITE.url}/images/logo.svg`,
-  email: CONTACT.email,
-  telephone: CONTACT.whatsapp.number,
+  image: `${SITE.url}/images/equipo.jpg`,
   medicalSpecialty: 'Periodontics',
-  areaServed: ['Montevideo', 'Punta del Este', 'Maldonado', 'Uruguay'],
-  location: LOCATIONS.map((loc) => ({
-    '@type': 'Place',
-    name: `${SITE.shortName} - ${loc.name}`,
+  department: LOCATIONS.map((loc) => ({
+    '@type': ['Dentist', 'MedicalBusiness'],
+    '@id': `${SITE.url}/#consultorio-${loc.id}`,
+    name: `${SITE.name} — ${loc.name}`,
+    url: `${SITE.url}/consultorios/#${loc.id}`,
+    image: `${SITE.url}/images/equipo.jpg`,
+    telephone: CONTACT.whatsapp.number,
+    email: CONTACT.email,
+    medicalSpecialty: 'Periodontics',
     address: {
       '@type': 'PostalAddress',
       streetAddress: loc.address,
       addressLocality: loc.name,
-      addressCountry: 'UY',
+      addressRegion: loc.region,
+      postalCode: loc.postalCode,
+      addressCountry: loc.countryCode,
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: loc.geo.latitude,
+      longitude: loc.geo.longitude,
+    },
+    openingHours: loc.openingHoursSchema,
+    hasMap: loc.mapsLink,
+    areaServed: loc.id === 'punta-del-este' ? ['Punta del Este', 'Maldonado'] : loc.name,
   })),
 };
 ---
