@@ -11,7 +11,7 @@ export const SITE = {
   shortName: 'Dra. Asquino',
   tagline: 'Periodoncia · Implantes · Salud bucal integral',
   description:
-    'Consulta de periodoncia e implantes en Montevideo y Punta del Este. Diagnóstico, tratamiento y mantenimiento periodontal con enfoque profesional y cercano.',
+    'Consultorio de la Dra. Natalia Asquino, periodoncista en Montevideo y Punta del Este. Diagnóstico, tratamiento y mantenimiento de encías, implantes y cirugía periodontal.',
   url: 'https://dranataliaasquino.com.uy',
   locale: 'es-UY',
 };
