@@ -36,7 +36,7 @@ const structuredData = {
   url: SITE.url,
   logo: `${SITE.url}/images/logo.svg`,
   image: `${SITE.url}/images/equipo.jpg`,
-  medicalSpecialty: 'Periodontics',
+  medicalSpecialty: 'Dentistry',
   department: LOCATIONS.map((loc) => ({
     '@type': ['Dentist', 'MedicalBusiness'],
     '@id': `${SITE.url}/#consultorio-${loc.id}`,
@@ -45,7 +45,7 @@ const structuredData = {
     image: `${SITE.url}/images/equipo.jpg`,
     telephone: CONTACT.whatsapp.number,
     email: CONTACT.email,
-    medicalSpecialty: 'Periodontics',
+    medicalSpecialty: 'Dentistry',
     address: {
       '@type': 'PostalAddress',
       streetAddress: loc.address,
