@@ -83,6 +83,7 @@ export const NAV = [
   { href: '/equipo/', label: 'Equipo' },
   { href: '/consultorios/', label: 'Consultorios' },
   { href: '/articulos/', label: 'Artículos' },
+  { href: '/investigacion/', label: 'Investigación' },
   { href: '/preguntas-frecuentes/', label: 'Preguntas frecuentes' },
   { href: '/para-colegas/', label: 'Para colegas' },
   { href: '/contacto/', label: 'Contacto' },

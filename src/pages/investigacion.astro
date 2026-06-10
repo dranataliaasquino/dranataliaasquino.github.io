@@ -1,26 +1,97 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
+
+// VideoObject schema.org for the featured research video.
+// uploadDate is approximate (article published April 2026 per Federico).
+const videoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: 'Investigación sobre dolor postoperatorio en injerto de paladar — Facultad de Odontología, UdelaR',
+  description:
+    'La Dra. Natalia Asquino y su equipo comparan dos técnicas de injerto de paladar (tejido conectivo subepitelial vs. injerto gingival desepitelizado obtenido extraoralmente) para evaluar el dolor postoperatorio. Video producido por la Facultad de Odontología de la Universidad de la República, Uruguay.',
+  thumbnailUrl: 'https://i.ytimg.com/vi/yxHMY0i2jYU/maxresdefault.jpg',
+  uploadDate: '2026-04-06',
+  embedUrl: 'https://www.youtube.com/embed/yxHMY0i2jYU',
+  contentUrl: 'https://www.youtube.com/watch?v=yxHMY0i2jYU',
+};
 ---
 
 <BaseLayout
   title="Investigación y docencia"
-  description="Actividad académica, publicaciones y proyectos de investigación de la Dra. Natalia Asquino."
-  noindex={true}
+  description="Actividad académica y de investigación de la Dra. Natalia Asquino en periodoncia clínica y cirugía mucogingival."
 >
   <Section padding="lg" width="default">
     <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">Investigación y docencia</p>
     <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-6">Actividad académica</h1>
+    <p class="text-lg text-muted leading-relaxed mb-12 text-justify">
+      La Dra. Asquino combina la práctica clínica en el consultorio con la actividad académica en la Facultad de Odontología de la Universidad de la República. Su línea de investigación se centra en cirugía mucogingival y en el manejo del dolor postoperatorio asociado a los injertos periodontales.
+    </p>
 
-    <div class="prose-body">
-      <h2>Publicaciones</h2>
-      <p class="text-muted">[Pendiente: lista de publicaciones con enlace o PDF.]</p>
+    <!-- Proyecto destacado -->
+    <h2 class="text-2xl font-serif text-sage-900 mb-3">Proyecto en curso: dolor postoperatorio en injertos de paladar</h2>
+    <p class="text-muted leading-relaxed mb-8 text-justify">
+      El estudio, realizado en conjunto con la Dra. Adriana Drescher, compara dos técnicas de toma de injerto de paladar — tejido conectivo subepitelial y injerto gingival desepitelizado obtenido extraoralmente — para evaluar cuánto dolor postoperatorio genera cada técnica en el paciente. La pregunta surge directamente de la práctica clínica: cuando hay que recubrir una raíz expuesta por retracción gingival, ¿qué técnica resulta menos molesta para el paciente sin comprometer el resultado clínico?
+    </p>
 
-      <h2>Proyectos en curso</h2>
-      <p class="text-muted">[Pendiente: descripción breve de líneas de investigación activas.]</p>
-
-      <h2>Docencia</h2>
-      <p class="text-muted">[Pendiente: cursos, materias y formación clínica.]</p>
+    <!-- Video con click-to-play para no impactar performance -->
+    <div
+      class="video-wrap relative w-full max-w-3xl aspect-video rounded-lg overflow-hidden bg-sage-100 cursor-pointer group"
+      data-video-id="yxHMY0i2jYU"
+      role="button"
+      tabindex="0"
+      aria-label="Reproducir video: investigación de la Facultad de Odontología sobre dolor postoperatorio en injerto de paladar"
+    >
+      <img
+        src="https://i.ytimg.com/vi/yxHMY0i2jYU/maxresdefault.jpg"
+        alt="Video de la Facultad de Odontología sobre la investigación de la Dra. Asquino en injertos de paladar"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 flex items-center justify-center bg-sage-900/20 group-hover:bg-sage-900/30 transition-colors">
+        <div class="w-16 h-16 rounded-full bg-cream/95 flex items-center justify-center shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-sage-900 ml-1">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+      </div>
     </div>
+
+    <p class="text-[14px] text-sage-600 mt-4 max-w-3xl">
+      <a
+        href="https://odon.edu.uy/sitio/docentes-investigan-el-dolor-postoperatorio-a-partir-de-la-comparacion-de-dos-tecnicas-de-injerto-de-paladar/"
+        target="_blank"
+        rel="noopener"
+        class="underline underline-offset-4 hover:text-sage-900"
+      >
+        Leer el artículo completo en el sitio de la Facultad de Odontología, UdelaR →
+      </a>
+    </p>
+
+    <!-- Publicaciones - placeholder honesto hasta que Natalia decida qué publicaciones destacar acá -->
+    <h2 class="text-2xl font-serif text-sage-900 mt-16 mb-3">Publicaciones</h2>
+    <p class="text-muted leading-relaxed text-justify">
+      Listado de publicaciones científicas disponible en el <a href="/cv/" class="text-sage-900 underline underline-offset-4 hover:text-sage-600">CV</a>.
+    </p>
   </Section>
+
+  <!-- VideoObject structured data for Google rich results -->
+  <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
+
+  <!-- Click-to-play YouTube embed: avoids loading the heavy YouTube iframe until the user actually wants the video -->
+  <script is:inline>
+    document.querySelectorAll('.video-wrap').forEach((el) => {
+      const play = () => {
+        const id = el.dataset.videoId;
+        el.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1" title="Investigación sobre injertos de paladar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe>`;
+      };
+      el.addEventListener('click', play);
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          play();
+        }
+      });
+    });
+  </script>
 </BaseLayout>
