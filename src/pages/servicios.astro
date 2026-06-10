@@ -1,6 +1,82 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
+import { SITE } from '../site.config';
+
+// Single source of truth for the services offered: drives both the visible
+// cards rendered below and the MedicalProcedure JSON-LD emitted at the
+// bottom of the page. procedureType uses values from the schema.org
+// MedicalProcedureType enum.
+const services = [
+  {
+    name: 'Diagnóstico periodontal',
+    description:
+      'Evaluación clínica y radiográfica del estado de las encías y el hueso que sostiene los dientes. Permite identificar gingivitis, periodontitis y otras alteraciones en estadios tempranos.',
+    procedureType: 'DiagnosticProcedure',
+  },
+  {
+    name: 'Tratamiento de la enfermedad periodontal',
+    description:
+      'Eliminación de placa y cálculo subgingival mediante raspado y alisado radicular. En casos más avanzados se complementa con procedimientos quirúrgicos para detener la progresión de la enfermedad.',
+    procedureType: 'TherapeuticProcedure',
+  },
+  {
+    name: 'Cirugía mucogingival',
+    description:
+      'Procedimientos quirúrgicos para corregir defectos del tejido gingival: aumento de encía queratinizada, manejo de frenillos y restablecimiento de la arquitectura gingival.',
+    procedureType: 'SurgicalProcedure',
+  },
+  {
+    name: 'Recubrimiento radicular',
+    description:
+      'Cirugía plástica periodontal para cubrir raíces expuestas por recesión gingival. Mejora la estética, reduce la sensibilidad y protege la superficie radicular.',
+    procedureType: 'SurgicalProcedure',
+  },
+  {
+    name: 'Regeneración tisular',
+    description:
+      'Técnicas que buscan recuperar tejido perdido por la enfermedad periodontal, utilizando injertos y biomateriales que estimulan la reconstrucción del soporte natural del diente.',
+    procedureType: 'SurgicalProcedure',
+  },
+  {
+    name: 'Implantes dentales',
+    description:
+      'Reposición de dientes perdidos mediante implantes osteointegrados. La planificación se realiza con criterios periodontales para asegurar estabilidad y resultados a largo plazo.',
+    procedureType: 'SurgicalProcedure',
+  },
+  {
+    name: 'Manejo de complicaciones periimplantarias',
+    description:
+      'Tratamiento de mucositis y periimplantitis, condiciones inflamatorias que afectan los tejidos alrededor de los implantes. Incluye descontaminación, terapia regenerativa cuando corresponde y seguimiento clínico.',
+    procedureType: 'TherapeuticProcedure',
+  },
+  {
+    name: 'Mantenimiento periodontal',
+    description:
+      'Controles periódicos para preservar los resultados del tratamiento y prevenir recaídas. Incluye monitoreo clínico, higiene profesional y refuerzo de los cuidados domiciliarios.',
+    procedureType: 'TherapeuticProcedure',
+  },
+];
+
+// MedicalProcedure JSON-LD, one entity per service. performer is linked
+// by @id to the Person schema on /sobre-natalia/ so Google can resolve
+// "who performs this procedure" to Natalia. bodyLocation is "mouth" for
+// every entry since all procedures listed are oral.
+const proceduresSchema = services.map((s) => ({
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: s.name,
+  description: s.description,
+  procedureType: `https://schema.org/${s.procedureType}`,
+  category: 'Dentistry',
+  bodyLocation: 'mouth',
+  performer: {
+    '@type': 'Person',
+    '@id': `${SITE.url}/sobre-natalia/#person`,
+    name: 'Natalia Asquino',
+    url: `${SITE.url}/sobre-natalia/`,
+  },
+}));
 ---
 
 <BaseLayout
@@ -13,48 +89,7 @@ import Section from '../components/Section.astro';
 
     <div class="grid sm:grid-cols-2 gap-4">
       {
-        [
-          {
-            name: 'Diagnóstico periodontal',
-            description:
-              'Evaluación clínica y radiográfica del estado de las encías y el hueso que sostiene los dientes. Permite identificar gingivitis, periodontitis y otras alteraciones en estadios tempranos.',
-          },
-          {
-            name: 'Tratamiento de la enfermedad periodontal',
-            description:
-              'Eliminación de placa y cálculo subgingival mediante raspado y alisado radicular. En casos más avanzados se complementa con procedimientos quirúrgicos para detener la progresión de la enfermedad.',
-          },
-          {
-            name: 'Cirugía mucogingival',
-            description:
-              'Procedimientos quirúrgicos para corregir defectos del tejido gingival: aumento de encía queratinizada, manejo de frenillos y restablecimiento de la arquitectura gingival.',
-          },
-          {
-            name: 'Recubrimiento radicular',
-            description:
-              'Cirugía plástica periodontal para cubrir raíces expuestas por recesión gingival. Mejora la estética, reduce la sensibilidad y protege la superficie radicular.',
-          },
-          {
-            name: 'Regeneración tisular',
-            description:
-              'Técnicas que buscan recuperar tejido perdido por la enfermedad periodontal, utilizando injertos y biomateriales que estimulan la reconstrucción del soporte natural del diente.',
-          },
-          {
-            name: 'Implantes dentales',
-            description:
-              'Reposición de dientes perdidos mediante implantes osteointegrados. La planificación se realiza con criterios periodontales para asegurar estabilidad y resultados a largo plazo.',
-          },
-          {
-            name: 'Manejo de complicaciones periimplantarias',
-            description:
-              'Tratamiento de mucositis y periimplantitis, condiciones inflamatorias que afectan los tejidos alrededor de los implantes. Incluye descontaminación, terapia regenerativa cuando corresponde y seguimiento clínico.',
-          },
-          {
-            name: 'Mantenimiento periodontal',
-            description:
-              'Controles periódicos para preservar los resultados del tratamiento y prevenir recaídas. Incluye monitoreo clínico, higiene profesional y refuerzo de los cuidados domiciliarios.',
-          },
-        ].map((s) => (
+        services.map((s) => (
           <div class="bg-white border border-sage-100 rounded-lg p-5">
             <div class="text-[15px] font-medium text-sage-900 mb-1">{s.name}</div>
             <div class="text-[13px] text-muted leading-relaxed text-justify">{s.description}</div>
@@ -63,4 +98,7 @@ import Section from '../components/Section.astro';
       }
     </div>
   </Section>
+
+  <!-- MedicalProcedure structured data, one entry per service -->
+  <script type="application/ld+json" set:html={JSON.stringify(proceduresSchema)} />
 </BaseLayout>
