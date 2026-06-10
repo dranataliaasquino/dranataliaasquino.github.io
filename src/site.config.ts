@@ -6,6 +6,10 @@
 // Flip to true ONLY at launch on dranataliaasquino.com.uy.
 export const LIVE = true;
 
+// Umami Cloud website ID. Tracking only fires when LIVE === true so we don't
+// pollute analytics with pre-launch / dev traffic. Account at cloud.umami.is.
+export const UMAMI_ID = '47e900ab-ff68-442b-b4e3-7beb94fc48b6';
+
 export const SITE = {
   name: 'Dra. Natalia Asquino',
   shortName: 'Dra. Asquino',
