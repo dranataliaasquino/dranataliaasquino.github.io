@@ -1,6 +1,65 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
+import { SITE } from '../site.config';
+
+// Person schema for Dra. Natalia Asquino. Gives Google a structured record
+// of who she is, her credentials, affiliations and expertise. Necessary
+// (though not sufficient) for an eventual personal Knowledge Panel and for
+// linking her as the author of blog articles.
+// sameAs (IG / FB profiles) is intentionally omitted while those profiles
+// are still being populated. Reactivate once they have publishable content.
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${SITE.url}/sobre-natalia/#person`,
+  name: 'Natalia Asquino',
+  givenName: 'Natalia',
+  familyName: 'Asquino',
+  honorificPrefix: 'Dra.',
+  jobTitle: 'Periodoncista',
+  description:
+    'Doctora en Odontología y especialista en Periodoncia con más de 10 años de práctica clínica. Profesora Adjunta (Grado 3) de la Cátedra de Periodoncia, Facultad de Odontología, UdelaR. Líneas de investigación en cirugía plástica periodontal y dolor postoperatorio en injertos periodontales.',
+  image: `${SITE.url}/images/natalia-asquino.jpg`,
+  url: `${SITE.url}/sobre-natalia/`,
+  worksFor: {
+    '@type': 'MedicalOrganization',
+    '@id': `${SITE.url}/#organization`,
+    name: SITE.name,
+    url: SITE.url,
+  },
+  alumniOf: [
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'Universidad de la República (UdelaR)',
+      url: 'https://udelar.edu.uy',
+    },
+  ],
+  affiliation: {
+    '@type': 'EducationalOrganization',
+    name: 'Facultad de Odontología, UdelaR',
+    url: 'https://odon.edu.uy',
+  },
+  hasOccupation: {
+    '@type': 'Occupation',
+    name: 'Periodoncista',
+    description: 'Especialista en periodoncia, cirugía mucogingival e implantes dentales',
+    occupationLocation: [
+      { '@type': 'City', name: 'Montevideo' },
+      { '@type': 'City', name: 'Punta del Este' },
+    ],
+  },
+  knowsAbout: [
+    'Periodoncia',
+    'Cirugía mucogingival',
+    'Recubrimiento radicular',
+    'Regeneración tisular',
+    'Implantología',
+    'Tratamiento de recesiones gingivales',
+    'Mantenimiento periodontal',
+    'Dolor postoperatorio en cirugía periodontal',
+  ],
+};
 ---
 
 <BaseLayout
@@ -73,4 +132,7 @@ import Section from '../components/Section.astro';
       </p>
     </div>
   </Section>
+
+  <!-- Person structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 </BaseLayout>

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
+import { SITE } from '../../site.config';
 
 export async function getStaticPaths() {
   const all = await getCollection('articulos', ({ data }) => !data.draft);
@@ -13,6 +14,54 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const articleUrl = `${SITE.url}/articulos/${entry.slug}/`;
+
+// Article structured data. Tells Google this is a Natalia-authored piece
+// published by the practice. Enables rich results for informational queries
+// and Google Discover eligibility on mobile. Author is linked by @id to the
+// Person schema on /sobre-natalia/, publisher by @id to the MedicalOrganization
+// schema on the home page.
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: entry.data.title,
+  description: entry.data.description,
+  image: `${SITE.url}/images/equipo.jpg`,
+  datePublished: entry.data.pubDate.toISOString(),
+  dateModified: entry.data.pubDate.toISOString(),
+  author: {
+    '@type': 'Person',
+    '@id': `${SITE.url}/sobre-natalia/#person`,
+    name: 'Natalia Asquino',
+    url: `${SITE.url}/sobre-natalia/`,
+  },
+  publisher: {
+    '@type': 'MedicalOrganization',
+    '@id': `${SITE.url}/#organization`,
+    name: SITE.name,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE.url}/images/logo.svg`,
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': articleUrl,
+  },
+};
+
+// BreadcrumbList: SERP shows "Inicio > Artículos > {title}" path instead of
+// the raw URL, improving the visual quality of the search result.
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE.url },
+    { '@type': 'ListItem', position: 2, name: 'Artículos', item: `${SITE.url}/articulos/` },
+    { '@type': 'ListItem', position: 3, name: entry.data.title, item: articleUrl },
+  ],
+};
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
@@ -29,4 +78,8 @@ const { Content } = await entry.render();
       <Content />
     </article>
   </Section>
+
+  <!-- Article + BreadcrumbList structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </BaseLayout>
