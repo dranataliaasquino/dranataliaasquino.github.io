@@ -6,19 +6,37 @@ import { LOCATIONS, whatsappLink } from '../site.config';
 ---
 
 <BaseLayout
-  title="Consultorios"
-  description="Consultorios de la Dra. Natalia Asquino en Montevideo y Punta del Este. Atención con agenda previa, coordinada por WhatsApp. Direcciones, horarios y mapa de cada sede."
+  title="Consultorios en Montevideo y Punta del Este"
+  description="Consultorios de la Dra. Natalia Asquino, periodoncista en Montevideo y Punta del Este. Direcciones, horarios y mapa de cada sede; la agenda se coordina por WhatsApp."
 >
   <Section padding="lg" width="default">
     <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-3">Consultorios</p>
-    <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-12">Dónde atendemos</h1>
+    <h1 class="text-4xl lg:text-5xl font-serif text-sage-900 mb-6">Consultorios en Montevideo y Punta del Este</h1>
+    <p class="text-lg text-muted leading-relaxed max-w-3xl mb-12 text-justify">
+      La Dra. Natalia Asquino atiende periodoncia e implantes en dos sedes: Montevideo y Punta del Este. En ambas, las consultas se coordinan con agenda previa por WhatsApp.
+    </p>
 
     <div class="grid lg:grid-cols-2 gap-6">
       {LOCATIONS.map((loc) => <LocationCard location={loc} showMap={true} />)}
     </div>
 
+    <div class="grid md:grid-cols-2 gap-10 mt-12">
+      <div>
+        <h2 class="text-2xl font-serif text-sage-900 mb-3">Periodoncista en Montevideo</h2>
+        <p class="text-[14px] text-muted leading-relaxed text-justify">
+          La sede de Montevideo está sobre la calle 26 de Marzo, en Pocitos. Allí atendemos diagnóstico y tratamiento de la enfermedad periodontal, cirugía mucogingival, recubrimiento radicular, regeneración tisular e implantes dentales. Recibimos pacientes de Montevideo y derivaciones de colegas, con agenda coordinada por WhatsApp.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-serif text-sage-900 mb-3">Periodoncista en Punta del Este</h2>
+        <p class="text-[14px] text-muted leading-relaxed text-justify">
+          En Punta del Este atendemos en el Edificio Linton Village, dentro del espacio de Clínica Borges, en la península. La consulta cubre tratamientos periodontales e implantológicos para pacientes de Punta del Este y Maldonado, también con agenda previa por WhatsApp.
+        </p>
+      </div>
+    </div>
+
     <div class="mt-12 bg-sage-100/40 rounded-lg p-6">
-      <h3 class="text-lg font-serif text-sage-900 mb-2">Cómo agendar</h3>
+      <h2 class="text-lg font-serif text-sage-900 mb-2">Cómo agendar</h2>
       <p class="text-muted mb-4 text-[14px] text-justify">
         Las citas se coordinan por WhatsApp.
       </p>
