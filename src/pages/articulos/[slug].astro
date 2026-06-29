@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
-import { SITE } from '../../site.config';
+import { SITE, whatsappLink } from '../../site.config';
 
 export async function getStaticPaths() {
   const all = await getCollection('articulos', ({ data }) => !data.draft);
@@ -77,6 +77,24 @@ const breadcrumbSchema = {
     <article class="prose-body">
       <Content />
     </article>
+
+    <!-- Scheduling CTA, shared by every article -->
+    <div class="mt-12 bg-sage-100/40 rounded-lg p-6">
+      <h2 class="text-lg font-serif text-sage-900 mb-2">¿Necesitás una consulta?</h2>
+      <p class="text-muted mb-4 text-[14px] text-justify">
+        La Dra. Natalia Asquino atiende periodoncia e implantes en Montevideo y Punta del Este. La agenda se coordina por WhatsApp.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href={whatsappLink()}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center px-4 py-2 rounded-md btn-whatsapp text-[13px] font-medium"
+        >
+          Agendar por WhatsApp
+        </a>
+      </div>
+    </div>
   </Section>
 
   <!-- Article + BreadcrumbList structured data -->
