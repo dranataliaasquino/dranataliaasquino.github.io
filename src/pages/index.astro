@@ -11,7 +11,7 @@ const articulosRecientes = all
   .slice(0, 3);
 ---
 
-<BaseLayout title={SITE.name} description={SITE.description}>
+<BaseLayout title="Periodoncista en Montevideo y Punta del Este" description={SITE.description}>
   <!-- Hero -->
   <Section padding="lg" background="cream">
     <div class="grid lg:grid-cols-12 gap-12 items-center">
@@ -80,8 +80,29 @@ const articulosRecientes = all
     </div>
   </Section>
 
-  <!-- Locations -->
+  <!-- Services -->
   <Section padding="lg">
+    <div class="flex items-end justify-between mb-8 flex-wrap gap-4">
+      <div>
+        <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-2">Servicios</p>
+        <h2 class="text-3xl font-serif text-sage-900">Tratamientos de periodoncia e implantes</h2>
+      </div>
+      <a href="/servicios/" class="text-sage-600 hover:text-sage-900 underline underline-offset-4 text-[14px]">
+        Ver todos los tratamientos →
+      </a>
+    </div>
+    <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <li class="bg-white border border-sage-100 rounded-lg p-5 text-[14px] text-sage-900">Diagnóstico periodontal</li>
+      <li class="bg-white border border-sage-100 rounded-lg p-5 text-[14px] text-sage-900">Tratamiento de la enfermedad periodontal</li>
+      <li class="bg-white border border-sage-100 rounded-lg p-5 text-[14px] text-sage-900">Cirugía mucogingival y recubrimiento radicular</li>
+      <li class="bg-white border border-sage-100 rounded-lg p-5 text-[14px] text-sage-900">Regeneración tisular</li>
+      <li class="bg-white border border-sage-100 rounded-lg p-5 text-[14px] text-sage-900">Implantes dentales</li>
+      <li class="bg-white border border-sage-100 rounded-lg p-5 text-[14px] text-sage-900">Mantenimiento periodontal</li>
+    </ul>
+  </Section>
+
+  <!-- Locations -->
+  <Section padding="lg" background="sage">
     <div class="mb-10">
       <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-2">Consultorios</p>
       <h2 class="text-3xl font-serif text-sage-900">Dos sedes, una misma atención</h2>
@@ -92,7 +113,7 @@ const articulosRecientes = all
   </Section>
 
   <!-- For colleagues callout -->
-  <Section background="sage" padding="md">
+  <Section padding="md">
     <div class="grid md:grid-cols-3 gap-8 items-center">
       <div class="md:col-span-2">
         <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-2">Para odontólogos</p>
@@ -113,7 +134,7 @@ const articulosRecientes = all
   </Section>
 
   <!-- Latest articles placeholder -->
-  <Section padding="lg">
+  <Section padding="lg" background="sage">
     <div class="flex items-end justify-between mb-8 flex-wrap gap-4">
       <div>
         <p class="text-[13px] uppercase tracking-[0.18em] text-sage-600 mb-2">Artículos</p>
