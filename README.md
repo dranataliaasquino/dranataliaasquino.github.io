@@ -1,6 +1,8 @@
 # dranataliaasquino — sitio web
 
-Sitio profesional de la Dra. Natalia Asquino. Construido con [Astro](https://astro.build) y desplegado en GitHub Pages.
+Sitio profesional de la Dra. Natalia Asquino. Construido con [Astro](https://astro.build) y desplegado en GitHub Pages sobre el dominio [dranataliaasquino.com.uy](https://dranataliaasquino.com.uy).
+
+El sitio está **en producción e indexable** (`LIVE = true` en `src/site.config.ts`).
 
 ## Cómo correr el sitio en local
 
@@ -15,85 +17,128 @@ Abrir http://localhost:4321 en el navegador.
 
 ## Comandos principales
 
-| Comando           | Acción                                     |
-| ----------------- | ------------------------------------------ |
-| `npm install`     | Instala dependencias                       |
-| `npm run dev`     | Servidor local con hot reload              |
-| `npm run build`   | Genera el sitio estático en `./dist/`      |
-| `npm run preview` | Previsualiza el build localmente            |
+| Comando           | Acción                                |
+| ----------------- | ------------------------------------- |
+| `npm install`     | Instala dependencias                  |
+| `npm run dev`     | Servidor local con hot reload         |
+| `npm run build`   | Genera el sitio estático en `./dist/` |
+| `npm run preview` | Previsualiza el build localmente      |
 
 ## Estructura
 
 ```
 src/
-├── pages/              # Una página = un archivo .astro
+├── pages/                      # Una página = un archivo .astro
 │   ├── index.astro
 │   ├── sobre-natalia.astro
+│   ├── servicios.astro
+│   ├── equipo.astro
 │   ├── consultorios.astro
-│   ├── articulos/
-│   └── casos/
-├── components/         # Componentes reutilizables (Header, Footer, etc.)
-├── layouts/            # BaseLayout para todas las páginas
-├── content/            # Markdown (artículos y casos clínicos)
-├── styles/             # CSS global
-└── site.config.ts      # Configuración central: contacto, ubicaciones, navegación
+│   ├── investigacion.astro
+│   ├── preguntas-frecuentes.astro
+│   ├── para-colegas.astro
+│   ├── contacto.astro
+│   ├── cv.astro
+│   ├── privacidad.astro        # noindex
+│   ├── articulos/              # index.astro + [slug].astro (blog)
+│   └── casos/                  # index.astro — sección en preparación, noindex
+├── components/                 # Header, Footer, Section, LocationCard
+├── layouts/
+│   └── BaseLayout.astro        # meta tags, JSON-LD, analytics — usado por todas las páginas
+├── content/
+│   ├── config.ts               # Schemas de las colecciones (articulos, casos)
+│   └── articulos/              # Markdown de los artículos publicados
+├── styles/global.css
+└── site.config.ts              # Configuración central: contacto, ubicaciones, navegación, LIVE
+
+public/
+├── CNAME                       # Dominio personalizado
+├── robots.txt
+├── favicon.svg
+├── og-image.png                # Previsualización en redes
+├── images/                     # Logo y fotos (equipo, retratos)
+└── files/CV_Asquino_2026_ES.pdf
 ```
 
 ## Edición rápida
 
-**Cambiar dato de contacto, dirección o número de WhatsApp:**
-Editar `src/site.config.ts`. Los cambios se propagan a todas las páginas.
+**Cambiar dato de contacto, dirección, horarios o número de WhatsApp:**
+Editar `src/site.config.ts`. Los cambios se propagan a todas las páginas (incluido el JSON-LD de `LocalBusiness`).
+
+**Cambiar la paleta de colores:**
+Editar `tailwind.config.mjs`.
 
 **Agregar una página nueva:**
-Crear archivo `.astro` en `src/pages/` (por ejemplo `src/pages/preguntas-frecuentes.astro`). La URL será `/preguntas-frecuentes/`.
+Crear archivo `.astro` en `src/pages/` (por ejemplo `src/pages/promociones.astro`). La URL será `/promociones/`.
 
 **Publicar un artículo nuevo:**
-Crear archivo Markdown en `src/content/articulos/YYYY-MM-DD-titulo.md` con front-matter:
+Crear archivo Markdown en `src/content/articulos/` con el slug como nombre de archivo — `higiene-bucal.md` se publica en `/articulos/higiene-bucal/`. Front-matter requerido (validado por `src/content/config.ts`; si falta un campo, el build falla):
+
 ```markdown
 ---
-title: "Título del artículo"
-date: 2025-XX-XX
-summary: "Resumen breve para la lista de artículos."
+title: "Cómo tener una correcta higiene bucal"
+description: "Resumen breve, se usa en la lista de artículos y en la meta description."
+pubDate: 2026-05-14
+audience: pacientes   # pacientes | colegas
+draft: false          # true lo excluye del build
 ---
 
-Contenido del artículo aquí...
+Contenido del artículo acá...
 ```
-*(Nota: el sistema de blog completo se implementará en Fase 3.)*
+
+Los artículos se listan ordenados por `pubDate` descendente en `/articulos/` y en el bloque "Lecturas recientes" de la home.
+
+## SEO y analytics
+
+- **Sitemap:** generado por `@astrojs/sitemap` en `/sitemap-index.xml`. El `lastmod` se elimina a propósito (ver comentario en `astro.config.mjs`): el sitio es institucional y evergreen, no queremos que Google muestre la fecha del último build como fecha de publicación.
+- **Structured data (JSON-LD):** `MedicalOrganization` + `LocalBusiness` por consultorio en `BaseLayout.astro`, `Person` en `/sobre-natalia/`, `Article` en cada artículo, `VideoObject` en `/investigacion/`.
+- **noindex por página:** pasar `noindex={true}` a `BaseLayout`. Hoy lo usan `/privacidad/` y `/casos/` (sección en preparación).
+- **Analytics:** Umami Cloud (sin cookies, sin banner de consentimiento). El script solo se inyecta cuando `LIVE === true`, así el tráfico de dev y pre-launch no ensucia las métricas. Panel: https://cloud.umami.is · `UMAMI_ID` en `src/site.config.ts`. Decisión y alternativas descartadas (GA4, Plausible) en la sección 14 del documento maestro.
+- **Redes sociales:** `SOCIAL` existe en `site.config.ts` pero **no se renderiza** en el sitio mientras los perfiles de IG y FB estén incompletos. Instrucciones para reactivarlos en el comentario de `site.config.ts`.
+
+## Modo LIVE
+
+`src/site.config.ts` expone `LIVE` (booleano), hoy en `true`. Es el interruptor maestro de visibilidad:
+
+| `LIVE`  | Efecto                                                                     |
+| ------- | -------------------------------------------------------------------------- |
+| `true`  | Indexable, analytics de Umami activo                                       |
+| `false` | `<meta name="robots" content="noindex, nofollow">` en todas las páginas, sin analytics |
+
+Ojo: `public/robots.txt` es un archivo estático y **no** responde a `LIVE`. Hoy está en modo producción (allow-all salvo `/privacidad/`). Si alguna vez hay que volver a pre-launch, además de poner `LIVE = false` hay que reemplazar `robots.txt` por `User-agent: *` / `Disallow: /` (instrucciones en el propio archivo).
 
 ## Despliegue
 
-El sitio se despliega automáticamente a GitHub Pages cada vez que se hace `push` a la rama `main`. La configuración está en `.github/workflows/deploy.yml`.
+El sitio se despliega automáticamente a GitHub Pages cada vez que se hace `push` a `main`. La configuración está en `.github/workflows/deploy.yml` (build con Node 20 + `actions/deploy-pages`). El deploy tarda 2-3 minutos.
 
 **Setup actual:**
+
 - Repositorio: `dranataliaasquino.github.io` (público), bajo la cuenta `dranataliaasquino` (formato de repositorio de sitio personal de GitHub: el repo se llama igual que `<usuario>.github.io`).
 - Settings → Pages → Source: GitHub Actions.
 - URL técnica de GitHub Pages: `https://dranataliaasquino.github.io/`.
-- Dominio personalizado: `dranataliaasquino.com.uy` (configurado en `public/CNAME`).
+- Dominio personalizado: `dranataliaasquino.com.uy` (configurado en `public/CNAME` y en `site` de `astro.config.mjs`).
 - DNS gestionados en Antel (`dns.antel.net.uy`): 4 registros A apex apuntando a `185.199.108–111.153`, CNAME `www` → `dranataliaasquino.github.io`. MX y SPF (ImprovMX + Gmail) para el correo institucional.
 - Email institucional: `contacto@dranataliaasquino.com.uy` (forwarding ImprovMX free → Gmail).
 
-**Modo LIVE / pre-launch:**
-- `src/site.config.ts` expone una variable `LIVE` (booleana). Mientras `LIVE === false`, todas las páginas emiten `<meta name="robots" content="noindex, nofollow">` y `public/robots.txt` bloquea a todos los crawlers.
-- Para lanzar al público hay que: poner `LIVE = true` en `site.config.ts`, restaurar `public/robots.txt` permitiendo crawling (`User-agent: *` / `Disallow: /privacidad/` + línea `Sitemap:`), confirmar `SITE.url` apuntando a `https://dranataliaasquino.com.uy`, y commitear todo en un solo commit con mensaje del estilo `Lanzo sitio en dranataliaasquino.com.uy`.
-
 **Si se cambia el dominio en el futuro:**
+
 1. Editar `astro.config.mjs`: cambiar `site` al nuevo dominio.
 2. Editar `public/CNAME` con el nuevo dominio.
-3. Configurar DNS del dominio para apuntar a GitHub Pages (registros A a 185.199.108–111.153).
-4. En Settings → Pages, actualizar el dominio personalizado.
+3. Actualizar la línea `Sitemap:` de `public/robots.txt`.
+4. Actualizar `SITE.url` en `src/site.config.ts`.
+5. Configurar DNS del dominio para apuntar a GitHub Pages (registros A a 185.199.108–111.153).
+6. En Settings → Pages, actualizar el dominio personalizado.
 
 ## Pendientes (TODO)
 
-Alineado con la sección 18 del documento maestro `Dental Practice/2026-05-16_Presencia_Online_Consultorio_v04.md`. Si algo cambia, actualizar ambos.
+Solo lo que se resuelve dentro de este repo. Los pendientes de cuentas externas (Google Business Profile, Search Console, Instagram, Facebook) viven en la sección 18 del documento maestro `Dental Practice/2026-05-31_Presencia_Online_Consultorio_v10.md`. Si algo cambia, actualizar ambos.
 
-- [ ] Activar modo LIVE (`src/site.config.ts` → `LIVE = true`) cuando Natalia apruebe el contenido y el sitio esté listo para indexarse.
-- [ ] Reemplazar foto principal y avatar (actualmente placeholders).
-- [ ] Completar Investigación y docencia: publicaciones, proyectos en curso, docencia (`src/pages/investigacion.astro`).
-- [ ] Revisar los artículos (`src/content/articulos/`).
-- [ ] Agregar casos clínicos (`src/content/casos/`).
-- [ ] Configurar Google Business Profile en Montevideo y Punta del Este.
-- [ ] Decidir e instalar herramienta de analytics (Google Analytics 4 vs Plausible/Umami).
-- [ ] Verificar el sitio en Google Search Console (post-launch).
+- [ ] Reemplazar las fotos placeholder por las de la sesión de fotografía profesional (`public/images/`).
+- [ ] Completar Publicaciones en `src/pages/investigacion.astro` (hoy remite al CV) cuando Natalia defina cuáles destacar.
+- [ ] Agregar casos clínicos: crear `src/content/casos/` con los primeros `.md` (el schema ya existe en `src/content/config.ts`), reemplazar el estado "en preparación" de `src/pages/casos/index.astro` y sacarle el `noindex`.
+- [ ] Revisar los artículos existentes (`src/content/articulos/`).
+- [ ] Confirmar la URL pública de Facebook tras el cambio de handle y actualizar `SOCIAL.facebook` en `src/site.config.ts`.
+- [ ] Reactivar los íconos de IG/FB (Footer + `sameAs` en el structuredData de `BaseLayout.astro`) cuando ambos perfiles tengan contenido publicable.
 
 ## Convenciones
 
@@ -105,4 +150,4 @@ Alineado con la sección 18 del documento maestro `Dental Practice/2026-05-16_Pr
 
 ## Soporte y mantenimiento
 
-Sitio mantenido por Federico (Cowork OS / Dental Practice / Website). Cambios menores se hacen editando archivos directamente. Cambios mayores: usar Claude Code en WSL apuntando a esta carpeta.
+Sitio mantenido por Federico (Cowork OS / Dental Practice / Website). Cambios menores se hacen editando archivos directamente. Cambios mayores: usar Claude Code en WSL apuntando a esta carpeta. Contactos técnicos de emergencia (Antel, ImprovMX, GitHub) en la sección 17 del documento maestro.
