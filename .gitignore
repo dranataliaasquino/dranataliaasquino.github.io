@@ -25,3 +25,10 @@ pnpm-debug.log*
 # Cowork drafts (keep separate from repo)
 content-drafts/
 assets/photos-original/
+
+# Local session notes and agent memory — never belong in a public repo.
+# CLAUDE.md is the exception: it is tracked on purpose (technical conventions).
+MEMORY.md
+.claude/
+.claude*/
+CLAUDE.local.md
