@@ -9,7 +9,7 @@ This file covers how to work **on the code in this repository**. It is the techn
 ## Stack
 
 - **Astro** (static output) + **Tailwind CSS**.
-- Tailwind runs through **PostCSS** (`postcss.config.mjs`), not an Astro integration. `@astrojs/tailwind` was dropped in the Astro 7 upgrade — it peers at `astro ^3 || ^4 || ^5` and has no Astro 6/7-compatible release. Tailwind is pinned to the **3.x LTS** line; moving to Tailwind 4 is a separate, deliberate migration (it relocates the palette tokens below into CSS-first `@theme` blocks).
+- Tailwind runs through **PostCSS** (`postcss.config.mjs`), not an Astro integration. `@astrojs/tailwind` was dropped in the Astro 7 upgrade — it peers at `astro ^3 || ^4 || ^5` and has no Astro 6/7-compatible release. Tailwind is pinned to the **3.x LTS** line — see the settled decision below. This is not a pending migration.
 - **Content:** Markdown collections under `src/content/`.
 - **Hosting:** GitHub Pages, custom domain `dranataliaasquino.com.uy`.
 - **No backend, no forms, no booking integration.** Contact is `mailto:` and `wa.me/` only. GitHub Pages is static-only; keeping it that way is what makes the site free, fast, and low-maintenance.
@@ -131,3 +131,4 @@ A cloud agent runs a maintenance pass every Monday and opens a **draft PR**. Sco
 7. **Analytics = Umami Cloud**, cookieless, so no consent banner. GA4 was rejected as overkill for an informational site. The script is injected only when `LIVE === true`, so dev traffic never pollutes metrics.
 8. **Sitemap drops `lastmod`** on purpose (see the comment in `astro.config.mjs`): the site is evergreen and institutional, and we don't want Google surfacing a build date as a publication date.
 9. **No per-city landing pages.** The single `/consultorios/` page covers both cities; the Maps pack already serves per-city intent.
+10. **Tailwind stays on the 3.x LTS line. Tailwind 4 was considered and rejected** (2026-07-16). Tailwind 4 requires Safari 16.4+, Chrome 111+, and Firefox 128+, because it depends on `@property` and `color-mix()`. Devices that cannot reach iOS 16.4 — an iPhone 7 or an original SE, which top out at iOS 15 — would render the site broken, not merely degraded. This is an informational site whose entire job is being reachable by patients, some of them on old phones, and Tailwind 4 buys it nothing a visitor would ever notice: no feature, no fix, no measurable speed. Trading patient reach for version currency is a bad trade here. **The trigger to revisit is data, not a release:** if Umami shows the pre-16.4 Safari tail has effectively gone to zero, the calculus changes. Until then, do not propose it, and do not treat "a new major exists" as a reason.
