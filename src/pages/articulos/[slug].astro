@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
 import { SITE, whatsappLink } from '../../site.config';
@@ -7,15 +7,15 @@ import { SITE, whatsappLink } from '../../site.config';
 export async function getStaticPaths() {
   const all = await getCollection('articulos', ({ data }) => !data.draft);
   return all.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
-const articleUrl = `${SITE.url}/articulos/${entry.slug}/`;
+const articleUrl = `${SITE.url}/articulos/${entry.id}/`;
 
 // Article structured data. Tells Google this is a Natalia-authored piece
 // published by the practice. Enables rich results for informational queries
