@@ -9,13 +9,14 @@ This file covers how to work **on the code in this repository**. It is the techn
 ## Stack
 
 - **Astro** (static output) + **Tailwind CSS**.
+- Tailwind runs through **PostCSS** (`postcss.config.mjs`), not an Astro integration. `@astrojs/tailwind` was dropped in the Astro 7 upgrade — it peers at `astro ^3 || ^4 || ^5` and has no Astro 6/7-compatible release. Tailwind is pinned to the **3.x LTS** line; moving to Tailwind 4 is a separate, deliberate migration (it relocates the palette tokens below into CSS-first `@theme` blocks).
 - **Content:** Markdown collections under `src/content/`.
 - **Hosting:** GitHub Pages, custom domain `dranataliaasquino.com.uy`.
 - **No backend, no forms, no booking integration.** Contact is `mailto:` and `wa.me/` only. GitHub Pages is static-only; keeping it that way is what makes the site free, fast, and low-maintenance.
 
 ## Commands
 
-Requires Node 20+ (the deploy workflow pins Node 20).
+Requires Node 22.12+ (the deploy workflow pins Node 22). Astro 6 raised the floor from Node 20; the build will not run on older versions.
 
 | Command | Action |
 | --- | --- |
@@ -45,10 +46,10 @@ Requires Node 20+ (the deploy workflow pins Node 20).
 Two things look like defects and are not. Both have been investigated; please don't spend a maintenance cycle rediscovering them.
 
 **1. The `casos` collection is declared but intentionally empty.**
-`src/content/config.ts` declares a `casos` collection with no `src/content/casos/` directory, so every build prints:
+`src/content.config.ts` declares a `casos` collection with no `src/content/casos/` directory, so every build prints:
 
 ```
-[WARN] [glob-loader] The base directory "src/content/casos/" does not exist.
+[WARN] [glob-loader] The base directory "/abs/path/to/src/content/casos/" does not exist.
 ```
 
 This is **by design**. The collection is a forward declaration for planned clinical-cases work: no page queries it yet, `src/pages/casos/index.astro` is a static `noindex` placeholder, and the privacy page is already written around the policy. The warning is cosmetic and honestly reports a pending feature.
@@ -91,7 +92,7 @@ Type: Inter (sans, body) + Source Serif 4 (serif, headings), via Google Fonts. N
 3. The draft is converted to Markdown, given front-matter, and written into `src/content/articulos/` (or `casos/`).
 4. **The `.docx` never moves or gets copied into the repo.** It stays on the Cowork side.
 
-Article front-matter is validated by `src/content/config.ts` — a missing field fails the build:
+Article front-matter is validated by `src/content.config.ts` — a missing field fails the build:
 
 ```markdown
 ---

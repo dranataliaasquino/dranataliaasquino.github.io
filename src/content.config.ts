@@ -1,7 +1,8 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const articulos = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/articulos' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -11,8 +12,13 @@ const articulos = defineCollection({
   }),
 });
 
+// Forward declaration for planned clinical-cases work. No src/content/casos/
+// directory exists yet and no page queries this collection, so every build
+// prints a [glob-loader] warning about the missing base directory. That is by
+// design and honestly reports a pending feature — see CLAUDE.md before
+// attempting to silence it.
 const casos = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/casos' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
