@@ -93,7 +93,7 @@ Los artículos se listan ordenados por `pubDate` descendente en `/articulos/` y 
 - **Sitemap:** generado por `@astrojs/sitemap` en `/sitemap-index.xml`. El `lastmod` se elimina a propósito (ver comentario en `astro.config.mjs`): el sitio es institucional y evergreen, no queremos que Google muestre la fecha del último build como fecha de publicación.
 - **Structured data (JSON-LD):** `MedicalOrganization` + `LocalBusiness` por consultorio en `BaseLayout.astro`, `Person` en `/sobre-natalia/`, `Article` en cada artículo, `VideoObject` en `/investigacion/`.
 - **noindex por página:** pasar `noindex={true}` a `BaseLayout`. Hoy lo usan `/privacidad/` y `/casos/` (sección en preparación).
-- **Analytics:** Umami Cloud (sin cookies, sin banner de consentimiento). El script solo se inyecta cuando `LIVE === true`, así el tráfico de dev y pre-launch no ensucia las métricas. Panel: https://cloud.umami.is · `UMAMI_ID` en `src/site.config.ts`. Decisión y alternativas descartadas (GA4, Plausible) en la sección 14 del documento maestro.
+- **Analytics:** Umami Cloud (sin cookies, sin banner de consentimiento). El script solo se inyecta cuando `LIVE === true`, así el tráfico de dev y pre-launch no ensucia las métricas. Panel: https://cloud.umami.is · `UMAMI_ID` en `src/site.config.ts`. Decisión y alternativas descartadas (GA4, Plausible) en la sección 14 del manual de infraestructura (ver "Soporte y mantenimiento").
 - **Redes sociales:** `SOCIAL` existe en `site.config.ts` pero **no se renderiza** en el sitio mientras los perfiles de IG y FB estén incompletos. Instrucciones para reactivarlos en el comentario de `site.config.ts`.
 
 ## Modo LIVE
@@ -131,12 +131,11 @@ El sitio se despliega automáticamente a GitHub Pages cada vez que se hace `push
 
 ## Pendientes (TODO)
 
-Solo lo que se resuelve dentro de este repo. Los pendientes de cuentas externas (Google Business Profile, Search Console, Instagram, Facebook) viven en la sección 18 del documento maestro `Dental Practice/2026-05-31_Presencia_Online_Consultorio_v10.md`. Si algo cambia, actualizar ambos.
+Solo lo que se resuelve dentro de este repo. La lista completa y canónica de pendientes —incluidos los de cuentas externas (Google Business Profile, Instagram, Facebook, backlinks)— vive en `Dental Practice/Website/CLAUDE.md`. Esta lista no se mantiene por duplicado: si algo cambia, la referencia es esa.
 
-- [ ] Reemplazar las fotos placeholder por las de la sesión de fotografía profesional (`public/images/`).
+- [ ] Reemplazar las fotos actuales por las de la sesión de fotografía profesional (`public/images/`). Las de hoy son reales, no placeholders genéricos: lo pendiente es la sesión profesional.
 - [ ] Completar Publicaciones en `src/pages/investigacion.astro` (hoy remite al CV) cuando Natalia defina cuáles destacar.
 - [ ] Agregar casos clínicos: crear `src/content/casos/` con los primeros `.md` (el schema ya existe en `src/content/config.ts`), reemplazar el estado "en preparación" de `src/pages/casos/index.astro` y sacarle el `noindex`.
-- [ ] Revisar los artículos existentes (`src/content/articulos/`).
 - [ ] Confirmar la URL pública de Facebook tras el cambio de handle y actualizar `SOCIAL.facebook` en `src/site.config.ts`.
 - [ ] Reactivar los íconos de IG/FB (Footer + `sameAs` en el structuredData de `BaseLayout.astro`) cuando ambos perfiles tengan contenido publicable.
 
@@ -150,4 +149,8 @@ Solo lo que se resuelve dentro de este repo. Los pendientes de cuentas externas 
 
 ## Soporte y mantenimiento
 
-Sitio mantenido por Federico (Cowork OS / Dental Practice / Website). Cambios menores se hacen editando archivos directamente. Cambios mayores: usar Claude Code en WSL apuntando a esta carpeta. Contactos técnicos de emergencia (Antel, ImprovMX, GitHub) en la sección 17 del documento maestro.
+Sitio mantenido por Federico (Cowork OS / Dental Practice / Website), con Claude Code en WSL apuntando a esta carpeta.
+
+**Todo cambio va por rama + draft PR**, por chico que sea: un push a `main` publica el sitio en vivo. Ver `CLAUDE.md` en la raíz del repo para las convenciones técnicas (comandos, modelo de deploy, convenciones de commit, no-issues conocidos).
+
+Contactos técnicos de emergencia (Antel, ImprovMX, GitHub): sección 17 del manual de infraestructura `Dental Practice/2026-07-16_Presencia_Online_Consultorio_v11.docx`.
