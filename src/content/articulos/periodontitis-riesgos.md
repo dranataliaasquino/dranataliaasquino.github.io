@@ -12,7 +12,7 @@ La buena noticia: la periodontitis es tratable. Lo importante es detectarla.
 
 ## Cómo aparece
 
-Detrás de la enfermedad están las bacterias que viven en la placa, esa película blanca que se forma sobre los dientes cada día. Si la placa no se elimina con un buen cepillado e higiene interdental, se mineraliza y se vuelve sarro, que ya no se elimina cepillando.
+Detrás de la enfermedad están las bacterias que viven en la placa, esa película blanca que se forma sobre los dientes cada día. Si la placa no se elimina con un buen cepillado e higiene interdental, se mineraliza y se vuelve [sarro](/articulos/acumulacion-sarro/), que ya no se elimina cepillando.
 
 A medida que el sarro se acumula bajo la encía, las bacterias provocan una inflamación crónica. Esa inflamación destruye gradualmente el hueso. Los dientes pierden soporte y, en etapas avanzadas, comienzan a moverse.
 
@@ -46,7 +46,7 @@ Lo que no se puede hacer es esperar. La periodontitis no se cura sola, y el hues
 
 ## Después del tratamiento: el mantenimiento
 
-La periodontitis es considerada una enfermedad crónica: la persona que la tuvo siempre tendrá más riesgo de recidiva. Por eso, después del tratamiento activo, se ingresa a un programa de **mantenimiento periodontal** — controles cada tres o cuatro meses, que mantienen la enfermedad estable. Este mantenimiento es clave para preservar los resultados logrados a largo plazo.
+La periodontitis es considerada una enfermedad crónica: la persona que la tuvo siempre tendrá más riesgo de recidiva. Por eso, después del tratamiento activo, se ingresa a un programa de **[mantenimiento periodontal](/servicios/)** — controles cada tres o cuatro meses, que mantienen la enfermedad estable. Este mantenimiento es clave para preservar los resultados logrados a largo plazo.
 
 ---
 

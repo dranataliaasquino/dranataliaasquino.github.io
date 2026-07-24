@@ -18,7 +18,7 @@ Hay personas que necesitan limpiezas más frecuentes — cada tres o cuatro mese
 
 Conviene aumentarla a **cada tres o cuatro meses** si:
 
-- Hubo periodontitis previa tratada (es lo que llamamos "mantenimiento periodontal").
+- Hubo periodontitis previa tratada (es lo que llamamos "[mantenimiento periodontal](/servicios/)").
 - Se forma sarro rápidamente.
 - Hay diabetes, especialmente si está mal controlada.
 - Hay tabaquismo.
@@ -27,7 +27,7 @@ Conviene aumentarla a **cada tres o cuatro meses** si:
 
 ## Por qué no alcanza el cepillado en casa
 
-Aunque hagas todo bien — cepillado dos veces al día, hilo o cepillos interdentales, técnica correcta — hay zonas que no se limpian eficazmente con la mejor higiene doméstica. La placa se mineraliza y se convierte en sarro, que ya no se elimina cepillando.
+Aunque hagas todo bien — cepillado dos veces al día, hilo o [cepillos interdentales](/articulos/cepillos-interdentales/), técnica correcta — hay zonas que no se limpian eficazmente con la mejor higiene doméstica. La placa se mineraliza y se convierte en [sarro](/articulos/acumulacion-sarro/), que ya no se elimina cepillando.
 
 La limpieza profesional remueve ese sarro, instrumenta zonas que el cepillo no alcanza y permite detectar problemas que aún no dan síntomas.
 

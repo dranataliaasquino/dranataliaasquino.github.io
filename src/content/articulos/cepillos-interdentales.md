@@ -6,7 +6,7 @@ audience: pacientes
 draft: false
 ---
 
-El cepillo de dientes no llega a limpiar las zonas interdentales, donde está casi la mitad de la superficie dental. Por eso el uso de una herramienta de higiene interdental es indispensable para lograr una buena salud bucal.
+El cepillo de dientes no llega a limpiar las zonas interdentales, donde está casi la mitad de la superficie dental. Por eso el uso de una herramienta de higiene interdental es indispensable para [lograr una buena salud bucal](/articulos/higiene-bucal/).
 
 ## Qué son los cepillos interdentales
 

@@ -14,7 +14,7 @@ No se trata de alarmar — se trata de entender que cuidar las encías es parte 
 
 La conexión mejor establecida es con la diabetes. Es una relación que va en ambas direcciones:
 
-- **La diabetes mal controlada empeora la enfermedad periodontal.** Los pacientes diabéticos tienen un riesgo más alto de desarrollar periodontitis y una respuesta más débil al tratamiento.
+- **La diabetes mal controlada empeora la enfermedad periodontal.** Los pacientes diabéticos tienen un riesgo más alto de desarrollar [periodontitis](/articulos/periodontitis-riesgos/) y una respuesta más débil al tratamiento.
 - **La periodontitis dificulta el control de la diabetes.** La inflamación crónica de las encías hace más difícil mantener la glucemia en rango.
 
 Tratar la periodontitis en un paciente diabético no solo cuida sus dientes: también puede mejorar los valores de hemoglobina glicosilada. Es uno de los hallazgos más sólidos de la investigación periodontal contemporánea.

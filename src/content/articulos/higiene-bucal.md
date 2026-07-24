@@ -22,12 +22,12 @@ El cepillo eléctrico es una opción para quienes tienen dificultad con la técn
 
 Entre diente y diente hay zonas que el cepillo no logra alcanzar. Si no se limpian, la placa se acumula y eso genera inflamación gingival.
 
-Es recomendable el uso de hilo dental y cepillos interdentales cuando los espacios entre los dientes lo permiten. Sería importante que consultes con tu odontólogo cuál es la herramienta de higiene interdental más apropiada para vos.
+Es recomendable el uso de hilo dental y [cepillos interdentales](/articulos/cepillos-interdentales/) cuando los espacios entre los dientes lo permiten. Sería importante que consultes con tu odontólogo cuál es la herramienta de higiene interdental más apropiada para vos.
 
 ## La consulta periódica
 
-Aunque la higiene en casa sea impecable, hay zonas que solo se limpian bien con instrumental profesional. Se recomienda una limpieza profesional como mínimo dos veces al año, según cada caso. Esto mantiene el sistema sano y permite detectar problemas en etapas tempranas, cuando son simples de resolver.
+Aunque la higiene en casa sea impecable, hay zonas que solo se limpian bien con instrumental profesional. Se recomienda una [limpieza profesional](/articulos/limpieza-profesional-frecuencia/) como mínimo dos veces al año, según cada caso. Esto mantiene el sistema sano y permite detectar problemas en etapas tempranas, cuando son simples de resolver.
 
 ---
 
-**¿Notás que te sangran las encías al cepillarte, sentís sensibilidad, o pasó más de un año de tu última limpieza?** Es un buen momento para coordinar una consulta.
+**¿Notás que te sangran las encías al cepillarte, sentís [sensibilidad](/articulos/sensibilidad-dental/), o pasó más de un año de tu última limpieza?** Es un buen momento para coordinar una consulta.

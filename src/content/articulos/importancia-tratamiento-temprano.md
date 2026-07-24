@@ -20,13 +20,13 @@ Toda enfermedad bucal es sensible al tiempo, pero la periodoncia lo es de una ma
 Es la forma más temprana. Se revierte completamente con limpieza profesional y mejora de la higiene en casa. Sin dejar secuelas.
 
 **Periodontitis inicial.**
-Hay pérdida leve de hueso. El tratamiento son una serie de limpiezas profundas específicas (raspado y alisado radicular, o desbridamiento subgingival) y controles. Se detiene el avance de la enfermedad.
+Hay pérdida leve de hueso. El tratamiento son una serie de limpiezas profundas específicas ([raspado y alisado radicular](/servicios/), o desbridamiento subgingival) y controles. Se detiene el avance de la enfermedad.
 
 **Periodontitis moderada.**
 La pérdida de hueso es más significativa. El tratamiento de base sigue siendo el mismo, pero a veces se complementa con procedimientos quirúrgicos en zonas específicas.
 
 **Periodontitis avanzada.**
-Hay pérdida de hueso, puede haber movilidad dental y migración de las piezas en la boca. El tratamiento es más extenso, puede requerir cirugía periodontal y rehabilitación con implantes.
+Hay pérdida de hueso, puede haber movilidad dental y migración de las piezas en la boca. El tratamiento es más extenso, puede requerir [cirugía periodontal](/servicios/) y rehabilitación con implantes.
 
 ## Lo que cambia con la consulta temprana
 

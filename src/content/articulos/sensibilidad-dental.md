@@ -14,7 +14,7 @@ Debajo del esmalte (la capa dura y blanca que recubre el diente) está la dentin
 
 ## Las causas más frecuentes
 
-**Retracción de la encía.** La raíz del diente queda expuesta y no tiene esmalte que la cubra. Es la causa más común. Suele aparecer con los años, por cepillado agresivo, o por enfermedad periodontal.
+**[Retracción de la encía](/articulos/retracciones-gingivales/).** La raíz del diente queda expuesta y no tiene esmalte que la cubra. Es la causa más común. Suele aparecer con los años, por cepillado agresivo, o por enfermedad periodontal.
 
 **Desgaste del esmalte.** Puede deberse a cepillado con cerdas duras o demasiada presión, consumo frecuente de bebidas ácidas (cítricos, gaseosas, vino) o reflujo gastroesofágico.
 
@@ -31,8 +31,8 @@ La conducta depende de la causa, pero el primer paso es siempre identificarla en
 - Cambiar el tipo de cepillo y la técnica de cepillado.
 - Usar pastas dentales específicas para dientes sensibles, que reducen la transmisión de estímulos al nervio.
 - Aplicar barnices, geles o materiales de cobertura sobre las zonas expuestas en consulta.
-- Tratar la enfermedad periodontal si hay inflamación de las encías.
-- Recubrir la raíz expuesta con un procedimiento de cirugía mucogingival, en casos de retracciones.
+- Tratar la [enfermedad periodontal](/articulos/periodontitis-riesgos/) si hay inflamación de las encías.
+- Recubrir la raíz expuesta con un procedimiento de [cirugía mucogingival](/servicios/), en casos de retracciones.
 - Usar férula nocturna si hay bruxismo.
 
 ---
