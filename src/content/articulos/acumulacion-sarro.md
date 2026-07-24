@@ -29,14 +29,14 @@ Dos personas con la misma higiene pueden formar cantidades muy distintas de sarr
 
 ## Por qué importa removerlo
 
-El sarro no es la causa directa de la periodontitis, pero su superficie es rugosa, lo que facilita que se acumule más placa encima. Bajo la línea de la encía, irrita los tejidos y los inflama. Si se deja, esa inflamación crónica puede evolucionar a **periodontitis**, que afecta el hueso que sostiene los dientes.
+El sarro no es la causa directa de la periodontitis, pero su superficie es rugosa, lo que facilita que se acumule más placa encima. Bajo la línea de la encía, irrita los tejidos y los inflama. Si se deja, esa inflamación crónica puede evolucionar a **[periodontitis](/articulos/periodontitis-riesgos/)**, que afecta el hueso que sostiene los dientes.
 
 El sarro **solo se remueve con instrumental profesional**.
 
 ## Qué se puede hacer
 
 - **Buena higiene diaria** retrasa su formación, aunque no la elimina.
-- **Limpiezas profesionales periódicas**, con la frecuencia que indique el odontólogo según cada caso.
+- **[Limpiezas profesionales periódicas](/articulos/limpieza-profesional-frecuencia/)**, con la frecuencia que indique el odontólogo según cada caso.
 
 ---
 

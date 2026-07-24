@@ -14,8 +14,8 @@ Estas son las señales más comunes que justifican una consulta. Si reconocés u
 
 - **Sangrado al cepillarse o al usar hilo dental**, sobre todo si es recurrente.
 - **Encías rojas, hinchadas o sensibles**.
-- **Retracción de la encía**, dientes que parecen "más largos".
-- **Sensibilidad** al frío, calor o al cepillarse, especialmente cerca de la línea de la encía.
+- **[Retracción de la encía](/articulos/retracciones-gingivales/)**, dientes que parecen "más largos".
+- **[Sensibilidad](/articulos/sensibilidad-dental/)** al frío, calor o al cepillarse, especialmente cerca de la línea de la encía.
 - **Mal aliento persistente** que no se va con el cepillado.
 - **Sabor metálico o desagradable** en la boca.
 - **Movilidad de algún diente**.
@@ -27,7 +27,7 @@ Estas son las señales más comunes que justifican una consulta. Si reconocés u
 - **Diabetes**, sobre todo si está mal controlada.
 - **Tabaquismo**.
 - **Embarazo o cambios hormonales** que generan inflamación de las encías.
-- **Tratamiento previo de periodontitis** (las personas tratadas necesitan mantenimiento periódico).
+- **Tratamiento previo de [periodontitis](/articulos/periodontitis-riesgos/)** (las personas tratadas necesitan mantenimiento periódico).
 - **Implantes dentales** colocados previamente, para controlar su salud a lo largo del tiempo.
 
 ## Derivaciones desde otros profesionales
