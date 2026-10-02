@@ -8,10 +8,6 @@
 //
 // Run after `npm run build`:  node scripts/seo-lint.mjs
 // Exits 0 if the built site is clean, 1 (with a report) if anything regressed.
-//
-// The weekly maintenance routine runs this and reports failures in its PR/issue.
-// It must stay GREEN on a healthy build — tune thresholds here, never silence a
-// real regression.
 
 import { readFileSync, existsSync } from 'node:fs';
 import { readdir } from 'node:fs/promises';
@@ -77,8 +73,8 @@ const errors = [];
 const warnings = [];
 const files = (await htmlFiles(DIST)).sort();
 
-// Uniqueness is only meaningful among indexable pages — noindex placeholders
-// (e.g. the casos/articulos index stubs) may legitimately share boilerplate.
+// Uniqueness is only meaningful among indexable pages; noindex pages may
+// legitimately share boilerplate.
 const titles = new Map();
 const descriptions = new Map();
 
