@@ -1,8 +1,3 @@
-# Production robots: allow all crawlers except the privacy page.
-# If returning to pre-launch mode, replace with:
-#   User-agent: *
-#   Disallow: /
-
 User-agent: *
 Allow: /
 Disallow: /privacidad/

@@ -12,11 +12,6 @@ const articulos = defineCollection({
   }),
 });
 
-// Forward declaration for planned clinical-cases work. No src/content/casos/
-// directory exists yet and no page queries this collection, so every build
-// prints a [glob-loader] warning about the missing base directory. That is by
-// design and honestly reports a pending feature — see CLAUDE.md before
-// attempting to silence it.
 const casos = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/casos' }),
   schema: z.object({

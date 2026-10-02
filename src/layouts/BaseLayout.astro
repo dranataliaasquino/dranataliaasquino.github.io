@@ -25,8 +25,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 // This pattern is Google's recommended schema for multi-location businesses — each
 // consultorio can rank independently in its own local search area while sharing the
 // parent brand identity.
-// Nota: `sameAs` (IG/FB) se omite a propósito mientras los perfiles
-// estén incompletos. Reactivar cuando IG y FB tengan contenido publicable.
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'MedicalOrganization',

@@ -1,13 +1,10 @@
 // Single source of truth for site-wide data.
 // Edit values here and they propagate everywhere.
 
-// Master switch for "live" mode.
-// While false: site emits noindex on every page and robots.txt blocks all crawlers.
-// Flip to true ONLY at launch on dranataliaasquino.com.uy.
+// When false, every page emits noindex and analytics is not injected.
 export const LIVE = true;
 
-// Umami Cloud website ID. Tracking only fires when LIVE === true so we don't
-// pollute analytics with pre-launch / dev traffic. Account at cloud.umami.is.
+// Umami website ID. Tracking only fires when LIVE === true.
 export const UMAMI_ID = '47e900ab-ff68-442b-b4e3-7beb94fc48b6';
 
 export const SITE = {
@@ -30,12 +27,6 @@ export const CONTACT = {
   email: 'contacto@dranataliaasquino.com.uy',
 };
 
-// Social profiles. Actualmente NO se renderizan en el sitio.
-// IG y FB estan incompletos; reactivar cuando tengan contenido publicable:
-// (i) reintroducir el bloque de iconos en Footer.astro;
-// (ii) reimportar SOCIAL en BaseLayout.astro y agregar
-//      sameAs: [SOCIAL.instagram, SOCIAL.facebook] al structuredData.
-// La URL de Facebook depende del cambio de handle pendiente.
 export const SOCIAL = {
   instagram: 'https://www.instagram.com/dranataliaasquino',
   facebook: 'https://www.facebook.com/dranataliaasquino',
