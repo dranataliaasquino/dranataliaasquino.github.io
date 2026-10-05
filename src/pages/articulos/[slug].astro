@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
 import { SITE, whatsappLink } from '../../site.config';
+import equipo from '../../assets/images/equipo.jpg';
 
 export async function getStaticPaths() {
   const all = await getCollection('articulos', ({ data }) => !data.draft);
@@ -27,7 +28,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: entry.data.title,
   description: entry.data.description,
-  image: `${SITE.url}/images/equipo.jpg`,
+  image: new URL(equipo.src, SITE.url).toString(),
   datePublished: entry.data.pubDate.toISOString(),
   dateModified: entry.data.pubDate.toISOString(),
   author: {

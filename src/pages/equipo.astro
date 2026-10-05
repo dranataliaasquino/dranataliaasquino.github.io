@@ -1,31 +1,36 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
+import { Image } from 'astro:assets';
+import natalia from '../assets/images/natalia-asquino.jpg';
+import clara from '../assets/images/clara-gonzalez.jpg';
+import virginia from '../assets/images/virginia-gonzalez.jpg';
+import veronica from '../assets/images/veronica-blanco.jpg';
 
 const team = [
   {
     name: 'Dra. Natalia Asquino',
     role: 'Periodoncista — Directora de la consulta',
     bio: 'Doctora en Odontología y Especialista en Periodoncia (UdelaR), con más de 10 años de práctica clínica en Montevideo y Punta del Este. Profesora Adjunta (Grado 3) de la Cátedra de Periodoncia, con foco clínico en cirugía plástica periodontal e injertos gingivales.',
-    photo: '/images/natalia-asquino.jpg',
+    photo: natalia,
   },
   {
     name: 'Dra. Clara González Da Ronch',
     role: 'Periodoncista',
     bio: 'Odontóloga y Especialista en Periodoncia de la Universidad Católica de Uruguay.',
-    photo: '/images/clara-gonzalez.jpg',
+    photo: clara,
   },
   {
     name: 'Virginia González',
     role: 'Higienista dental — Montevideo',
     bio: 'Higienista en Odontología por la Facultad de Odontología de la UdelaR.',
-    photo: '/images/virginia-gonzalez.jpg',
+    photo: virginia,
   },
   {
     name: 'Verónica Blanco',
     role: 'Higienista dental — Punta del Este',
     bio: 'Higienista en Odontología por la Facultad de Odontología de la UdelaR.',
-    photo: '/images/veronica-blanco.jpg',
+    photo: veronica,
   },
 ];
 ---
@@ -43,9 +48,11 @@ const team = [
         team.map((m) => (
           <div class="bg-white border border-sage-100 rounded-lg p-5 flex gap-5">
             {m.photo ? (
-              <img
+              <Image
                 src={m.photo}
                 alt={m.name}
+                widths={[144, 288, 432]}
+                sizes="(min-width: 640px) 144px, 128px"
                 class="w-32 sm:w-36 aspect-square shrink-0 rounded-md object-cover object-[center_20%] border border-sage-100"
                 loading="lazy"
               />

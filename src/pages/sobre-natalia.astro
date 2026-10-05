@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
+import { Image } from 'astro:assets';
 import { SITE } from '../site.config';
+import natalia from '../assets/images/natalia-asquino.jpg';
 
 // ProfilePage with a Person as mainEntity. Google recognizes ProfilePage as
 // a rich result feature (added 2024) for pages that profile a single person.
@@ -25,7 +27,7 @@ const profileSchema = {
     jobTitle: 'Periodoncista',
     description:
       'Doctora en Odontología y especialista en Periodoncia con más de 10 años de práctica clínica. Profesora Adjunta (Grado 3) de la Cátedra de Periodoncia, Facultad de Odontología, UdelaR. Líneas de investigación en cirugía plástica periodontal y dolor postoperatorio en injertos periodontales.',
-    image: `${SITE.url}/images/natalia-asquino.jpg`,
+    image: new URL(natalia.src, SITE.url).toString(),
     url: `${SITE.url}/sobre-natalia/`,
     worksFor: {
       '@type': 'MedicalOrganization',
@@ -80,9 +82,11 @@ const profileSchema = {
 
     <div class="grid lg:grid-cols-4 gap-10">
       <div class="lg:col-span-1">
-        <img
-          src="/images/natalia-asquino.jpg"
+        <Image
+          src={natalia}
           alt="Dra. Natalia Asquino, periodoncista"
+          widths={[300, 484, 726, natalia.width]}
+          sizes="(min-width: 1024px) 242px, calc(100vw - 40px)"
           class="aspect-[3/4] lg:aspect-auto w-full lg:h-full object-cover object-[center_20%] rounded-lg border border-sage-100"
           loading="eager"
         />
