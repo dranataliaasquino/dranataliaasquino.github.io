@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { Font } from 'astro:assets';
+import equipo from '../assets/images/equipo.jpg';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE, LOCATIONS, CONTACT, LIVE, UMAMI_ID } from '../site.config';
@@ -21,6 +22,7 @@ const {
 
 const pageTitle = title === SITE.name ? title : `${title} · ${SITE.shortName}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const orgImage = new URL(equipo.src, Astro.site).toString();
 
 // Structured data: MedicalOrganization (parent brand) + 2 LocalBusiness departments.
 // This pattern is Google's recommended schema for multi-location businesses — each
@@ -34,14 +36,14 @@ const structuredData = {
   description: SITE.description,
   url: SITE.url,
   logo: `${SITE.url}/images/logo.svg`,
-  image: `${SITE.url}/images/equipo.jpg`,
+  image: orgImage,
   medicalSpecialty: 'Dentistry',
   department: LOCATIONS.map((loc) => ({
     '@type': ['Dentist', 'MedicalBusiness'],
     '@id': `${SITE.url}/#consultorio-${loc.id}`,
     name: `${SITE.name} — ${loc.name}`,
     url: `${SITE.url}/consultorios/#${loc.id}`,
-    image: `${SITE.url}/images/equipo.jpg`,
+    image: orgImage,
     telephone: CONTACT.whatsapp.number,
     email: CONTACT.email,
     medicalSpecialty: 'Dentistry',

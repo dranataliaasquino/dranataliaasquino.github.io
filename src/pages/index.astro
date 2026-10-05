@@ -1,5 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import equipo from '../assets/images/equipo.jpg';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import LocationCard from '../components/LocationCard.astro';
@@ -43,9 +45,12 @@ const articulosRecientes = all
         </div>
       </div>
       <div class="lg:col-span-5">
-        <img
-          src="/images/equipo.jpg"
+        <Image
+          src={equipo}
           alt="Equipo del consultorio de la Dra. Natalia Asquino"
+          widths={[400, 660, 800, equipo.width]}
+          sizes="(max-width: 488px) calc(100vw - 40px), 448px"
+          quality={70}
           class="aspect-square w-full max-w-md rounded-lg object-cover border border-sage-100 ml-auto"
           loading="eager"
         />
