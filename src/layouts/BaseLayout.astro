@@ -10,6 +10,10 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageAlt?: string;
+  imageType?: string;
   noindex?: boolean;
 }
 
@@ -17,6 +21,10 @@ const {
   title = SITE.name,
   description = SITE.description,
   image = '/og-image.png',
+  imageWidth = 844,
+  imageHeight = 443,
+  imageAlt = 'Dra. Natalia Asquino · Periodoncia',
+  imageType = 'image/png',
   noindex = false,
 } = Astro.props;
 
@@ -88,15 +96,16 @@ const structuredData = {
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content="es_UY" />
     <meta property="og:image" content={new URL(image, Astro.site).toString()} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:alt" content="Dra. Natalia Asquino · Periodoncia" />
+    <meta property="og:image:width" content={imageWidth.toString()} />
+    <meta property="og:image:height" content={imageHeight.toString()} />
+    <meta property="og:image:type" content={imageType} />
+    <meta property="og:image:alt" content={imageAlt} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site).toString()} />
+    <meta name="twitter:image:alt" content={imageAlt} />
 
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
