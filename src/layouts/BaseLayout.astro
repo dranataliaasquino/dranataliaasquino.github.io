@@ -32,6 +32,13 @@ const pageTitle = title === SITE.name ? title : `${title} · ${SITE.shortName}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const orgImage = new URL(equipo.src, Astro.site).toString();
 
+const websiteStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.name,
+  url: new URL('/', Astro.site).toString(),
+};
+
 // Structured data: MedicalOrganization (parent brand) + 2 LocalBusiness departments.
 // This pattern is Google's recommended schema for multi-location businesses — each
 // consultorio can rank independently in its own local search area while sharing the
@@ -91,6 +98,7 @@ const structuredData = {
     {(!LIVE || noindex) && <meta name="robots" content="noindex, nofollow" />}
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
@@ -108,6 +116,9 @@ const structuredData = {
     <meta name="twitter:image:alt" content={imageAlt} />
 
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    {Astro.url.pathname === '/' && (
+      <script type="application/ld+json" set:html={JSON.stringify(websiteStructuredData)} />
+    )}
 
     {/* Umami Cloud — cookieless analytics. Only fires in production (LIVE) so
         dev/preview traffic does not pollute the dashboard. defer keeps it off
